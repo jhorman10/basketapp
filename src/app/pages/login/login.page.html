@@ -1,14 +1,28 @@
-<ion-header no-border>
-    <ion-toolbar color="dark">
-        <ion-title>login</ion-title>
-    </ion-toolbar>
-</ion-header>
-
 <ion-content padding>
-    <ion-button expand="full" routerLink="/user" color="basketOrange">
-        User
-    </ion-button>
-    <ion-button expand="full" routerLink="/admin" color="basketOrange">
-        Admin
+    <h2>INICIA SESIÓN</h2>
+    <ion-item>
+        <ion-input  inputmode="email" 
+                    placeholder="Correo Electrónico">
+        </ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-input  inputmode="password"
+                    placeholder="Contraseña"
+                    minLenght="8">
+        </ion-input>
+    </ion-item>
+    <ion-item lines="none">
+        <small><a href="">¿Olvidaste tu contraseña?</a></small>
+    </ion-item>
+        
+    <ion-button color="primary"
+                type="submit">
+        Iniciar Sesión
     </ion-button>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+        Sponsored By:
+  </ion-toolbar>
+</ion-footer>
