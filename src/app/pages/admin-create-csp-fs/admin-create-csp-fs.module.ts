@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AdmincreateCSPFsPage } from './admin-create-csp-fs.page';
+import { AdminCreateCspFsPage } from './admin-create-csp-fs.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: AdmincreateCSPFsPage
+    component: AdminCreateCspFsPage
   }
 ];
 
@@ -21,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [AdmincreateCSPFsPage]
+  declarations: [AdminCreateCspFsPage]
 })
-export class AdminCreateCSPFsPageModule {}
+export class AdminCreateCspFsPageModule {}

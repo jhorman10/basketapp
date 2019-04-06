@@ -27,10 +27,10 @@ const routes: Routes = [
   { path: 'admin-create-fixture-step1', loadChildren: './pages/admin-create-fixture-step1/admin-create-fixture-step1.module#AdmincreateFixtureStep1PageModule' },
   // tslint:disable-next-line:max-line-length
   { path: 'admin-create-fixture-step2', loadChildren: './pages/admin-create-fixture-step2/admin-create-fixture-step2.module#AdmincreateFixtureStep2PageModule' },
-  { path: 'admin-create-csp-fs', loadChildren: './pages/admin-create-csp-fs/admin-create-csp-fs.module#AdmincreateCSPFsPageModule' },
   { path: 'user-view-fixture', loadChildren: './pages/user-view-fixture/user-view-fixture.module#UserViewFixturePageModule' },
   { path: 'user-search-team', loadChildren: './pages/user-search-team/user-search-team.module#UserSearchTeamPageModule' },
-  { path: 'user-view-statistics', loadChildren: './pages/user-view-statistics/user-view-statistics.module#UserViewStatisticsPageModule' }
+  { path: 'user-view-statistics', loadChildren: './pages/user-view-statistics/user-view-statistics.module#UserViewStatisticsPageModule' },  { path: 'admin-create-csp-fs', loadChildren: './pages/admin-create-csp-fs/admin-create-csp-fs.module#AdminCreateCspFsPageModule' }
+
 ];
 
 @NgModule({

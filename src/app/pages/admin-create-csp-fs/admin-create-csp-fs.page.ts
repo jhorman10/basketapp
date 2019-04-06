@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './admin-create-csp-fs.page.html',
   styleUrls: ['./admin-create-csp-fs.page.scss'],
 })
-export class AdmincreateCSPFsPage implements OnInit {
+export class AdminCreateCspFsPage implements OnInit {
 
   constructor() { }
 
