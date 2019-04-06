@@ -1,4 +1,4 @@
-<app-headerbuttons titulo="inicio"></app-headerbuttons>
+<app-headerbuttons text-justify titulo="inicio"></app-headerbuttons>
 
 <ion-content padding>
     <ion-item detail routerLink="/user-search-csp">
@@ -7,12 +7,17 @@
             Buscar Torneo
         </ion-label>
     </ion-item>
-    <ion-item detail>
+    <ion-item detail routerLink="/user-view-statistics">
         <ion-icon slot="start" name="time"></ion-icon>
         <ion-label>
             Ultimos Resultados
         </ion-label>
-        <app-time-line></app-time-line>
+    </ion-item>
+    <ion-item detail routerLink="/user-view-fixture">
+        <ion-icon slot="start" name="calendar"></ion-icon>
+        <ion-label>
+            Ver Fixture
+        </ion-label>
     </ion-item>
     <ion-item detail routerLink="/user-configurations">
         <ion-icon slot="start" name="contact"></ion-icon>

@@ -11,5 +11,7 @@ export class UserSearchCSPPage implements OnInit {
 
   ngOnInit() {
   }
+  onClick() {
 
+  }
 }

@@ -12,4 +12,7 @@ export class UserSearchTeamPage implements OnInit {
   ngOnInit() {
   }
 
+  onClick() {}
+
+  onError() {}
 }

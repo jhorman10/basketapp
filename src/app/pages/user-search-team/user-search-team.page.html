@@ -1,9 +1,34 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>userSearchTeam</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-headerbuttons titulo="buscar equipo"></app-headerbuttons>
 
-<ion-content>
+<ion-content text-center>
+    <ion-title></ion-title>
+    <ion-input text-left type="text" name="search" placeholder="Nombre del equipo">
+        <ion-icon name="search" padding></ion-icon>
+    </ion-input>
+    <ion-item-group>
+        <ion-item-divider color="dark">
+            <ion-label>Resultados de la busqueda en " Torneo: Mi torneo "</ion-label>
+        </ion-item-divider>
+        <ion-list>
+            <ion-radio-group>
+                <ion-item>
+                    <ion-label>los chachos</ion-label>
+                    <ion-radio color="basketOrange" slot="end" value="biff" checked></ion-radio>
+                </ion-item>
 
+                <ion-item>
+                    <ion-label>los tatos</ion-label>
+                    <ion-radio color="basketOrange" slot="end" value="griff"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>los pepes</ion-label>
+                    <ion-radio color="basketOrange" slot="end" value="buford"></ion-radio>
+                </ion-item>
+            </ion-radio-group>
+        </ion-list>
+    </ion-item-group>
+    <ion-button text-center color="basketOrange" (click)="onClick()">
+        Seleccionar equipo
+    </ion-button>
 </ion-content>

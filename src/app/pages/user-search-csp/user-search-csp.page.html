@@ -1,6 +1,33 @@
-<app-headerbuttons text-center titulo="buscar torneo">
-</app-headerbuttons>
+<app-headerbuttons titulo="buscar torneo"></app-headerbuttons>
 
-<ion-content>
+<ion-content text-center>
+    <ion-input text-left type="text" name="search" placeholder="Nombre del torneo">
+        <ion-icon name="search" padding></ion-icon>
+    </ion-input>
+    <ion-item-group>
+        <ion-item-divider color="dark">
+            <ion-label>Resultados de la busqueda</ion-label>
+        </ion-item-divider>
+        <ion-list>
+            <ion-radio-group>
+                <ion-item>
+                    <ion-label>Biff</ion-label>
+                    <ion-radio color="basketOrange" slot="end" value="biff" checked></ion-radio>
+                </ion-item>
 
+                <ion-item>
+                    <ion-label>Griff</ion-label>
+                    <ion-radio color="basketOrange" slot="end" value="griff"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Buford</ion-label>
+                    <ion-radio color="basketOrange" slot="end" value="buford"></ion-radio>
+                </ion-item>
+            </ion-radio-group>
+        </ion-list>
+    </ion-item-group>
+    <ion-button text-center color="basketOrange" (click)="onClick()" routerLink="/user-search-team">
+        Seleccionar torneo
+    </ion-button>
 </ion-content>
