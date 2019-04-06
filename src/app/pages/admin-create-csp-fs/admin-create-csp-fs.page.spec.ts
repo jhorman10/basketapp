@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminCreteCSPFsPage } from './admin-create-csp-fs.page';
+import { AdmincreateCSPFsPage } from './admin-create-csp-fs.page';
 
-describe('AdminCreteCSPFsPage', () => {
-  let component: AdminCreteCSPFsPage;
-  let fixture: ComponentFixture<AdminCreteCSPFsPage>;
+describe('AdmincreateCSPFsPage', () => {
+  let component: AdmincreateCSPFsPage;
+  let fixture: ComponentFixture<AdmincreateCSPFsPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminCreteCSPFsPage ],
+      declarations: [ AdmincreateCSPFsPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminCreteCSPFsPage);
+    fixture = TestBed.createComponent(AdmincreateCSPFsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

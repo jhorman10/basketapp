@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AdminCreteFixtureStep1Page } from './admin-create-fixture-step1.page';
+import { AdmincreateFixtureStep1Page } from './admin-create-fixture-step1.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: AdminCreteFixtureStep1Page
+    component: AdmincreateFixtureStep1Page
   }
 ];
 
@@ -21,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [AdminCreteFixtureStep1Page]
+  declarations: [AdmincreateFixtureStep1Page]
 })
-export class AdminCreteFixtureStep1PageModule {}
+export class AdmincreateFixtureStep1PageModule {}
