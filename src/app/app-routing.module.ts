@@ -24,10 +24,13 @@ const routes: Routes = [
   // tslint:disable-next-line:max-line-length
   { path: 'admin-create-csp-step3', loadChildren: './pages/admin-create-csp-step3/admin-create-csp-step3.module#AdminCreateCSPStep3PageModule' },
   // tslint:disable-next-line:max-line-length
-  { path: 'admin-crete-fixture-step1', loadChildren: './pages/admin-crete-fixture-step1/admin-crete-fixture-step1.module#AdminCreteFixtureStep1PageModule' },
+  { path: 'admin-create-fixture-step1', loadChildren: './pages/admin-create-fixture-step1/admin-crete-fixture-step1.module#AdminCreteFixtureStep1PageModule' },
   // tslint:disable-next-line:max-line-length
-  { path: 'admin-crete-fixture-step2', loadChildren: './pages/admin-crete-fixture-step2/admin-crete-fixture-step2.module#AdminCreteFixtureStep2PageModule' },
-  { path: 'admin-crete-csp-fs', loadChildren: './pages/admin-crete-csp-fs/admin-crete-csp-fs.module#AdminCreteCSPFsPageModule' }
+  { path: 'admin-create-fixture-step2', loadChildren: './pages/admin-create-fixture-step2/admin-crete-fixture-step2.module#AdminCreteFixtureStep2PageModule' },
+  { path: 'admin-create-csp-fs', loadChildren: './pages/admin-create-csp-fs/admin-crete-csp-fs.module#AdminCreteCSPFsPageModule' },
+  { path: 'user-view-fixture', loadChildren: './pages/user-view-fixture/user-view-fixture.module#UserViewFixturePageModule' },
+  { path: 'user-search-team', loadChildren: './pages/user-search-team/user-search-team.module#UserSearchTeamPageModule' },
+  { path: 'user-view-statistics', loadChildren: './pages/user-view-statistics/user-view-statistics.module#UserViewStatisticsPageModule' }
 ];
 
 @NgModule({

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-admin-crete-csp-fs',
-  templateUrl: './admin-crete-csp-fs.page.html',
-  styleUrls: ['./admin-crete-csp-fs.page.scss'],
+  selector: 'app-admin-create-csp-fs',
+  templateUrl: './admin-create-csp-fs.page.html',
+  styleUrls: ['./admin-create-csp-fs.page.scss'],
 })
 export class AdminCreteCSPFsPage implements OnInit {
 
