@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-admin-create-csp-step1',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminCreateCSPStep1Page implements OnInit {
 
-  constructor() { }
+  constructor(public alertCtrl: AlertController) { }
 
   ngOnInit() {
+  }
+
+  async presentAlert() {
+    const alert = await this.alertCtrl.create({
+      header: 'Número de grupos',
+      inputs: [
+        {
+          name: 'numero_grupos',
+          type: 'number'
+        }
+      ],
+      buttons: ['Cancelar', 'OK']
+    });
+
+    await alert.present();
   }
 
 }
