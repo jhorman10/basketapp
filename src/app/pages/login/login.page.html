@@ -1,38 +1,33 @@
-<ion-header no-border>
-    <ion-toolbar color="dark">
-        <ion-title text-center>login</ion-title>
-    </ion-toolbar>
-</ion-header>
-
 <ion-content padding text-center>
-    <h2 text-center>INICIA SESIÓN</h2>
+    <br><br><br>
+    <h2 text-center>
+        <ion-label color="light">INICIA SESIÓN</ion-label>
+    </h2>
+    <br><br>
     <ion-item color="transparent">
-        <ion-input  inputmode="email" 
-                    placeholder="Correo Electrónico"
-                    text-center
-                    >
+        <ion-input color="light" type="email" inputmode="email" placeholder="Correo Electrónico" text-center>
         </ion-input>
     </ion-item>
+    <br>
     <ion-item color="transparent" text-center>
-        <ion-input  inputmode="password"
-                    placeholder="Contraseña"
-                    minLenght="8">
+        <ion-input color="light" type="password" inputmode="password" placeholder="Contraseña" minLenght="8">
         </ion-input>
-    </ion-item>        
-    <ion-item   lines="none" 
-                color="transparent"
-                text-center>
-        <ion-label><small><a>¿Olvidaste tu contraseña?</a></small></ion-label>
     </ion-item>
-    <ion-button color="primary"
-                type="submit"
-                >
+    <br>
+    <ion-label text-center routerLink="/user-forgot-pw" color="light"><small>¿Olvidaste tu contraseña?</small></ion-label>
+    <br><br><br>
+    <ion-button color="dark" type="submit">
         Iniciar Sesión
     </ion-button>
+    <br><br>
+    <ion-label color="light" routerLink="/user-register"><small>Registrarse</small> </ion-label>
+    <br><br><br>
+    <br><br><br>
+    <ion-footer>
+        <ion-toolbar text-center color="transparent">
+            <ion-label color="light">
+                Sponsored By:
+            </ion-label>
+        </ion-toolbar>
+    </ion-footer>
 </ion-content>
-
-<ion-footer color="transparent">
-  <ion-toolbar>
-        Sponsored By:
-  </ion-toolbar>
-</ion-footer>
