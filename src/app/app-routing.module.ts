@@ -31,7 +31,8 @@ const routes: Routes = [
   { path: 'user-search-team', loadChildren: './pages/user-search-team/user-search-team.module#UserSearchTeamPageModule' },
   { path: 'user-view-statistics', loadChildren: './pages/user-view-statistics/user-view-statistics.module#UserViewStatisticsPageModule' },
   { path: 'admin-create-csp-fs', loadChildren: './pages/admin-create-csp-fs/admin-create-csp-fs.module#AdminCreateCspFsPageModule' },
-  { path: 'user-forgot-pw', loadChildren: './pages/user-forgot-pw/user-forgot-pw.module#UserForgotPwPageModule' },  { path: 'user-edit-info', loadChildren: './pages/user-edit-info/user-edit-info.module#UserEditInfoPageModule' }
+  { path: 'user-forgot-pw', loadChildren: './pages/user-forgot-pw/user-forgot-pw.module#UserForgotPwPageModule' },
+  { path: 'user-edit-info', loadChildren: './pages/user-edit-info/user-edit-info.module#UserEditInfoPageModule' }
 
 
 
