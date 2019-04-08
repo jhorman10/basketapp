@@ -1,37 +1,42 @@
 <ion-header no-border>
     <ion-toolbar color="basketOrange">
         <ion-buttons slot="start">
-            <ion-back-button defaultHref="/"></ion-back-button>
+            <ion-back-button class="backBtn" defaultHref="/"></ion-back-button>
         </ion-buttons>
-        <ion-title text-capitalize>CREAR TORNEO</ion-title>
-        <ion-buttons slot="end">
-            <ion-button routerLink="/admin-create-csp-step1">Crear</ion-button>
+        <ion-title text-capitalize class="tituloAdmin">CREAR TORNEO</ion-title>
+        <ion-buttons slot="end" class="botonCrearP">
+            <ion-button routerLink="/admin-create-csp-step1" class="botonCrear">Crear</ion-button>
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-    <ion-item lines="none">
-        <ion-icon name="trophy"></ion-icon>
-    </ion-item>
-    <ion-item lines="none">
-        <ion-input  placeholder="Nombre del torneo"
-                    name="nombreTorneo"
-                    type="text">
-        </ion-input>
-    </ion-item>
+    <ion-row text-center>
+        <ion-icon  name="trophy"></ion-icon>
+    </ion-row>
+    <!-- class="trofeoCrear" -->
+
+
+    <ion-input  placeholder="Nombre del torneo"
+            name="nombreTorneo"
+            type="text"
+            class="adminNombreTorneo">
+    </ion-input>
+
+    
 
     <ion-item lines="none">
-        <ion-icon name="arrow-dropdown"></ion-icon>
+        <ion-icon name="arrow-dropdown" class="flechaAbajo"></ion-icon>
     </ion-item>
 
-    <ion-item lines="none">
+    <ion-item lines="none" class="modalidadtorneo">
         <ion-icon   name="trophy"
                     slot="start">
         </ion-icon>
-        <ion-label><p style="font-weight: bold">Grupos + Playoff </p>Varios grupos y un playoff <br> para ganar el torneo</ion-label>
+        <ion-label text-left><p style="font-weight: bold">Grupos + Playoff </p>Varios grupos y un playoff <br> para ganar el torneo</ion-label>
         <ion-toggle checked
-                    slot="end"></ion-toggle>
+                    slot="end">
+        </ion-toggle>
     </ion-item>
 </ion-content>

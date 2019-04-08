@@ -9,3 +9,62 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+//estilos de las vistas admin
+
+.tituloAdmin {
+    font-size: 18px;
+    color: white;
+    text-align: center;
+}
+
+.backBtn {
+    color: white;
+}
+
+.botonCrear {
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: white;
+    border-radius: 5px;
+    color: white;
+}
+
+
+.trofeoCrear {
+    font-size: 70px;
+    color: #ffff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 125px;
+    border-radius: 50%;
+    background-color: #FF5D00;
+}
+
+.adminNombreTorneo {
+    text-align: center;
+    width: 250px;
+    height: 25px;
+    margin-left: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+}
+
+.flechaAbajo {
+    color: #0088D9;
+    font-size: 60px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 125px;
+}
+
+.modalidadtorneo {
+    border-color: gray;
+    border-top: 10px;
+    border-bottom: 10px    
+}
+
+
+
+
