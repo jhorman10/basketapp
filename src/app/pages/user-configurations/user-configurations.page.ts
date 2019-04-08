@@ -11,6 +11,5 @@ export class UserConfigurationsPage implements OnInit {
 
   ngOnInit() {
   }
-  onClick() {
-  }
+  onClick() {}
 }

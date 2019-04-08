@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'user', pathMatch: 'full' },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'user', loadChildren: './pages/user/user.module#UserPageModule' },
   { path: 'admin', loadChildren: './pages/admin/admin.module#AdminPageModule' },
@@ -30,7 +30,9 @@ const routes: Routes = [
   { path: 'user-view-fixture', loadChildren: './pages/user-view-fixture/user-view-fixture.module#UserViewFixturePageModule' },
   { path: 'user-search-team', loadChildren: './pages/user-search-team/user-search-team.module#UserSearchTeamPageModule' },
   { path: 'user-view-statistics', loadChildren: './pages/user-view-statistics/user-view-statistics.module#UserViewStatisticsPageModule' },
-  { path: 'admin-create-csp-fs', loadChildren: './pages/admin-create-csp-fs/admin-create-csp-fs.module#AdminCreateCspFsPageModule' },  { path: 'user-forgot-pw', loadChildren: './pages/user-forgot-pw/user-forgot-pw.module#UserForgotPwPageModule' }
+  { path: 'admin-create-csp-fs', loadChildren: './pages/admin-create-csp-fs/admin-create-csp-fs.module#AdminCreateCspFsPageModule' },
+  { path: 'user-forgot-pw', loadChildren: './pages/user-forgot-pw/user-forgot-pw.module#UserForgotPwPageModule' },  { path: 'user-edit-info', loadChildren: './pages/user-edit-info/user-edit-info.module#UserEditInfoPageModule' }
+
 
 
 ];
