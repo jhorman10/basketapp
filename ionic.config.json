@@ -1,5 +1,7 @@
 {
   "name": "BasketApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,11 +1,11 @@
 <ion-header>
     <ion-toolbar color="basketOrange">
         <ion-buttons slot="start">
-            <ion-back-button color="light" text="Atras" defaultHref="/"></ion-back-button>
+            <ion-back-button color="light" defaultHref="/"></ion-back-button>
         </ion-buttons>
-        <ion-title color="light">Perfil</ion-title>
+        <ion-title text-center color="light">Perfil</ion-title>
         <ion-buttons slot="end">
-            <ion-button (click)="onClick()">
+            <ion-button routerLink="/user-edit-info">
                 <ion-icon color="light" slot="icon-only" name="cog"></ion-icon>
             </ion-button>
         </ion-buttons>
