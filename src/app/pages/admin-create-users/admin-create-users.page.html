@@ -1,6 +1,92 @@
-<app-headerbuttons titulo="Create Users">
-</app-headerbuttons>
+<ion-header no-border>
+  <ion-toolbar color="basketOrange">
+      <ion-buttons slot="start">
+          <ion-back-button text="" color="light" defaultHref="/"></ion-back-button>
+          <ion-label slot="start">Grupo#</ion-label>
+      </ion-buttons>
+      <ion-title class="tituloAdmin" text-capitalize>EQUIPO#</ion-title>
+      <ion-buttons slot="end">
+          <ion-button class="botonCrear" 
+                      size="small"                      
+                      routerLink="/admin-create-fixture-step1">
+                      Guardar
+          </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
-<ion-content>
+<ion-content padding>
+    <p>JUGADORES</p>
+    <ion-grid>
+        <ion-row>
+            
+            <ion-col align-self-center size="2">
+                <ion-avatar>
+                    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                </ion-avatar>               
+            </ion-col>
 
+            <ion-col align-self-center size="10">
+                <ion-item>
+                    <ion-label>Jugador</ion-label>
+                    <ion-select multiple="false">
+                      <ion-select-option value="J1">Jugador1</ion-select-option>
+                      <ion-select-option value="olives">Jugador2</ion-select-option>
+                      <ion-select-option value="xcheese">Jugador3</ion-select-option>
+                      <ion-select-option value="peppers">Jugador4</ion-select-option>
+                      <ion-select-option value="mushrooms">Jugador5</ion-select-option>
+                      <ion-select-option value="onions">Jugador6</ion-select-option>
+                      <ion-select-option value="pepperoni">Jugador7</ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col align-self-center size="2">
+                    <ion-avatar>
+                        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                    </ion-avatar>
+            </ion-col>
+            <ion-col align-self-center size="10">
+                <ion-item>
+                    <ion-label>Jugador</ion-label>
+                    <ion-select multiple="false">
+                      <ion-select-option value="bacon">Jugador1</ion-select-option>
+                      <ion-select-option value="olives">Jugador2</ion-select-option>
+                      <ion-select-option value="xcheese">Jugador3</ion-select-option>
+                      <ion-select-option value="peppers">Jugador4</ion-select-option>
+                      <ion-select-option value="mushrooms">Jugador5</ion-select-option>
+                      <ion-select-option value="onions">Jugador6</ion-select-option>
+                      <ion-select-option value="pepperoni">Jugador7</ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col align-self-center size="2">
+                    <ion-avatar>
+                        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                    </ion-avatar>
+            </ion-col>
+            <ion-col align-self-center size="10">
+                <ion-item>
+                    <ion-label>Jugador</ion-label>
+                    <ion-select multiple="false">
+                      <ion-select-option value="bacon">Jugador1</ion-select-option>
+                      <ion-select-option value="olives">Jugador2</ion-select-option>
+                      <ion-select-option value="xcheese">Jugador3</ion-select-option>
+                      <ion-select-option value="peppers">Jugador4</ion-select-option>
+                      <ion-select-option value="mushrooms">Jugador5</ion-select-option>
+                      <ion-select-option value="onions">Jugador6</ion-select-option>
+                      <ion-select-option value="pepperoni">Jugador7</ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-buttons class="btnAnadirJugador">
+        <ion-button >
+            <ion-icon size="large" name="add"></ion-icon>
+        </ion-button>
+    </ion-buttons>
 </ion-content>

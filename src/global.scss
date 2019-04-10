@@ -92,6 +92,24 @@
     padding-left: 20px;
 }
 
+.btnAddTeam {
+    margin-top: 100px;
+    margin-left: 140px;
+    font-size: 40px;
+    color: black;
+
+    .iconAddTeam {
+        border-style: solid;
+        border-color: #292929;
+        border-radius: 50px;
+        background-color: #FF5D00;
+    }
+}
+
+.rowNombreEquipo {
+    border: solid 1px #292929;
+}
+
 
 
 
