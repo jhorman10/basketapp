@@ -1,9 +1,77 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>adminCreateCSP-step3</ion-title>
+<ion-header no-border>
+  <ion-toolbar color="basketOrange">
+      <ion-buttons slot="start">
+          <ion-back-button color="light" defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title class="tituloAdmin" text-capitalize>AJUSTES</ion-title>
+      <ion-buttons slot="end">
+          <ion-button class="btnGuardar"
+                      routerLink="/admin">
+                      Guardar
+          </ion-button>
+      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <p class="tituloGeneral">GENERAL</p>
+  <ion-grid>
+    <ion-row align-items-center>
+      <ion-col size="10">
+        <ion-label>Configuración</ion-label>
+      </ion-col>
+      <ion-col size="2">
+        <ion-icon size="medium" name="arrow-dropright"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row align-items-center>
+      <ion-col size="7">
+        <ion-label>Nombre del Torneo</ion-label>
+      </ion-col>
+      <ion-col size="5">
+        <ion-input type="text" placeholder="Nombre"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row align-items-center>
+      <ion-col size="7">
+        <ion-label>Ciudad</ion-label>
+      </ion-col>
+      <ion-col size="5">
+        <ion-input type="text" placeholder="Medellín"></ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <p>PUNTOS</p>
+  <ion-grid>
+    <ion-row align-items-center>
+      <ion-col size="10">
+        <ion-label>Puntos otorgados por ganar</ion-label>
+      </ion-col>
+      <ion-col size="2">
+        <ion-input type="number" placeholder="2"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row align-items-center>
+      <ion-col size="10">
+        <ion-label>Puntos otorgados por perder</ion-label>
+      </ion-col>
+      <ion-col size="2">
+        <ion-input type="number" placeholder="1"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row align-items-center>
+      <ion-col size="10">
+        <ion-label>Puntos otorgados por perder por W</ion-label>
+      </ion-col>
+      <ion-col size="2">
+        <ion-input type="number" placeholder="0"></ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
+  <ion-buttons>
+    <ion-button class="btnEliminar" color="light" (click)="deleteCSP()">
+      <ion-label>ELIMINAR TORNEO</ion-label>
+    </ion-button>
+  </ion-buttons>
 </ion-content>
