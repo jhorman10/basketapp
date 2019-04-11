@@ -6,9 +6,9 @@
         <ion-icon name="search" padding></ion-icon>
     </ion-input>
     <ion-item-group>
-        <ion-item-divider color="dark">
-            <ion-label>Resultados de la busqueda en " Torneo: Mi torneo "</ion-label>
-        </ion-item-divider>
+        <p>
+           Resultados de la busqueda en " Torneo: Mi torneo " 
+        </p>
         <ion-list>
             <ion-radio-group>
                 <ion-item>
@@ -28,7 +28,7 @@
             </ion-radio-group>
         </ion-list>
     </ion-item-group>
-    <ion-button text-center color="basketOrange" (click)="onClick()">
+    <ion-button text-center color="basketOrange" (click)="onClick()" routerLink="/user">
         <ion-label color="light">Seleccionar equipo</ion-label>
     </ion-button>
 </ion-content>
