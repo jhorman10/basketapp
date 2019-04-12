@@ -13,19 +13,4 @@ export class AdminCreateCSPStep1Page implements OnInit {
   ngOnInit() {
   }
 
-  async presentAlert() {
-    const alert = await this.alertCtrl.create({
-      header: 'Número de grupos',
-      inputs: [
-        {
-          name: 'numero_grupos',
-          type: 'number'
-        }
-      ],
-      buttons: ['Cancelar', 'OK']
-    });
-
-    await alert.present();
-  }
-
 }

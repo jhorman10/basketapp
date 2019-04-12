@@ -12,8 +12,4 @@ export class AdminCreateCSPStep3Page implements OnInit {
   ngOnInit() {
   }
 
-  deleteCSP() {
-    console.log('Torneo Eliminado');
-  }
-
 }

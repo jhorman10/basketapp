@@ -3,9 +3,9 @@
       <ion-buttons slot="start">
           <ion-back-button color="light" defaultHref="/"></ion-back-button>
       </ion-buttons>
-      <ion-title class="tituloAdmin" text-capitalize>PASO 2 DE 2</ion-title>
+      <ion-title class="tituloAdmin" text-capitalize>PASO 1 DE 2</ion-title>
       <ion-buttons slot="end">
-          <ion-button class="botonCrear"
+          <ion-button class="botonCrear" 
                       size="small"                      
                       routerLink="/admin-create-csp-step3">
                       Siguiente
@@ -14,33 +14,35 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
 
-  <p class="configGrupos" >CONFIGURACIÓN DE EQUIPOS</p>
+   <p class="configGrupos" >CONFIGURACIÓN DE GRUPOS</p>
 
-  <ion-grid>
-    <ion-row class="rowNombreEquipo">
-      <ion-col size="4">
-        <ion-label>
-          Grupo
-        </ion-label>
-      </ion-col>
-      <ion-col size="8">
-        <ion-label>
-          Nombre Equipo
-        </ion-label>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col class="btnAddTeam">
-        <ion-buttons>
-          <ion-button onclick="">
-            <ion-icon class="iconAddTeam" size="large" 
-                      name="add">
-            </ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-grid>
+  <ion-row class="numeroGrupos">
+    <ion-col size="2">
+      <ion-icon class="iconCreate" name="arrow-dropright-circle"></ion-icon>
+    </ion-col>
+    <ion-col size="8" align-self-center>
+      <ion-label (click)="presentAlert()">
+              Número de grupos
+      </ion-label>
+    </ion-col>
+    <ion-col size="2" align-self-center>
+      <ion-icon size="large" color="primary" name="arrow-dropright"></ion-icon>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="numeroGrupos">
+    <ion-col size="2">      
+      <ion-icon class="iconCreate" name="arrow-dropright-circle"></ion-icon>               
+    </ion-col>
+    <ion-col size="10" align-self-center>
+      <ion-label class="gruposTexto">GRUPOS</ion-label> <!--se hace un dropdown para ver los grupos agregados(grupoA, grupoB default) -->
+    </ion-col>
+  </ion-row> 
+
+</ion-grid>
+
 </ion-content>

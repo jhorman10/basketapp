@@ -12,4 +12,8 @@ export class AdminDeleteCSPPage implements OnInit {
   ngOnInit() {
   }
 
+
+  delTorneo() {
+    console.log('El torneo ha sido eliminado.');
+  }
 }
