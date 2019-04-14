@@ -6,7 +6,7 @@
       </ion-buttons>
       <ion-title class="tituloAdmin" text-capitalize>EQUIPO#</ion-title>
       <ion-buttons slot="end">
-          <ion-button class="botonCrear" 
+          <ion-button class="botonCrearP" 
                       size="small"                      
                       routerLink="/admin-create-fixture-step1">
                       Guardar
@@ -17,73 +17,42 @@
 
 <ion-content padding>
     <p>JUGADORES</p>
-    <ion-grid>
-        <ion-row>
-            
-            <ion-col align-self-center size="2">
-                <ion-avatar>
-                    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-                </ion-avatar>               
-            </ion-col>
+    <ion-item lines="none">
+        <ion-avatar slot="start">
+            <img src="../../../assets/avatar.jpg">
+        </ion-avatar>
+        <ion-item style="width: 500px">
+            <ion-select style="width: 500px" multiple="true" placeholder="Select Pizza">
+                <ion-select-option value="peperoni">Peperoni</ion-select-option>
+                <ion-select-option value="hawaii">Hawaii</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-item>
 
-            <ion-col align-self-center size="10">
-                <ion-item>
-                    <ion-label>Jugador</ion-label>
-                    <ion-select multiple="false">
-                      <ion-select-option value="J1">Jugador1</ion-select-option>
-                      <ion-select-option value="olives">Jugador2</ion-select-option>
-                      <ion-select-option value="xcheese">Jugador3</ion-select-option>
-                      <ion-select-option value="peppers">Jugador4</ion-select-option>
-                      <ion-select-option value="mushrooms">Jugador5</ion-select-option>
-                      <ion-select-option value="onions">Jugador6</ion-select-option>
-                      <ion-select-option value="pepperoni">Jugador7</ion-select-option>
-                    </ion-select>
-                </ion-item>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col align-self-center size="2">
-                    <ion-avatar>
-                        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-                    </ion-avatar>
-            </ion-col>
-            <ion-col align-self-center size="10">
-                <ion-item>
-                    <ion-label>Jugador</ion-label>
-                    <ion-select multiple="false">
-                      <ion-select-option value="bacon">Jugador1</ion-select-option>
-                      <ion-select-option value="olives">Jugador2</ion-select-option>
-                      <ion-select-option value="xcheese">Jugador3</ion-select-option>
-                      <ion-select-option value="peppers">Jugador4</ion-select-option>
-                      <ion-select-option value="mushrooms">Jugador5</ion-select-option>
-                      <ion-select-option value="onions">Jugador6</ion-select-option>
-                      <ion-select-option value="pepperoni">Jugador7</ion-select-option>
-                    </ion-select>
-                </ion-item>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col align-self-center size="2">
-                    <ion-avatar>
-                        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-                    </ion-avatar>
-            </ion-col>
-            <ion-col align-self-center size="10">
-                <ion-item>
-                    <ion-label>Jugador</ion-label>
-                    <ion-select multiple="false">
-                      <ion-select-option value="bacon">Jugador1</ion-select-option>
-                      <ion-select-option value="olives">Jugador2</ion-select-option>
-                      <ion-select-option value="xcheese">Jugador3</ion-select-option>
-                      <ion-select-option value="peppers">Jugador4</ion-select-option>
-                      <ion-select-option value="mushrooms">Jugador5</ion-select-option>
-                      <ion-select-option value="onions">Jugador6</ion-select-option>
-                      <ion-select-option value="pepperoni">Jugador7</ion-select-option>
-                    </ion-select>
-                </ion-item>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+    <ion-item lines="none">
+        <ion-avatar slot="start">
+            <img src="../../../assets/avatar.jpg">
+        </ion-avatar>
+        <ion-item style="width: 500px">
+            <ion-select style="width: 500px" multiple="true" placeholder="Select Pizza">
+                <ion-select-option value="peperoni">Peperoni</ion-select-option>
+                <ion-select-option value="hawaii">Hawaii</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-item>
+
+    <ion-item lines="none">
+        <ion-avatar slot="start">
+            <img src="https://store.playstation.com/store/api/chihiro/00_09_000/container/MX/es/999/UP2477-CUSA06694_00-AV00000000000121/1553251072000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000">
+        </ion-avatar>
+        <ion-item style="width: 500px">
+            <ion-select style="width: 500px" multiple="false" placeholder="Select Pizza">
+                <ion-select-option value="peperoni">Peperoni</ion-select-option>
+                <ion-select-option value="hawaii">Hawaii</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-item>
+
     <ion-buttons class="btnAnadirJugador">
         <ion-button >
             <ion-icon size="large" name="add"></ion-icon>
