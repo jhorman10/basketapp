@@ -27,6 +27,3 @@ describe('UserRegisterPage', () => {
 });
 
 
-saveData(){
-  console.log(this.myForm.value);
-}

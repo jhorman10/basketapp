@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
 @Component({
   selector: 'app-user-register',
   templateUrl: './user-register.page.html',
@@ -17,3 +16,4 @@ export class UserRegisterPage implements OnInit {
   }
 
 }
+
