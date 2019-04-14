@@ -1,35 +1,41 @@
 <app-headerbuttons titulo="registrarse"></app-headerbuttons>
 
 <ion-content text-center>
-    <br>
-    <ion-item>
-        <ion-label position="floating">Nombre completo</ion-label>
-        <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label position="floating">Numero de cedula</ion-label>
-        <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label position="floating">Correo electronico</ion-label>
-        <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label position="floating">Confirmar correo electronico</ion-label>
-        <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label position="floating">Confirmar contraseña</ion-label>
-        <ion-input></ion-input>
-    </ion-item>
-    <br><br>
-    <ion-label color="danger"><small>proximamente el administrador se pondra en contacto con usted </small></ion-label>
-    <br><br>
-    <ion-button color="basketOrange">
-        <ion-label color="light">registrarse</ion-label>
-    </ion-button>
+    <!-- <form [formGroup]="registro" (ngSubmit)="saveData()"> -->
+        <ion-list>
+            <br>
+            <ion-item>
+                <ion-label position="floating">Nombre completo</ion-label>
+                <ion-input formControlName="name"id="name" required pattern="[A-Za-z]"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Numero de cedula</ion-label>
+                <ion-input formControlName="cardid" id="cardid" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Correo electronico</ion-label>
+                <ion-input formControlName="email" id="email" type="email" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Confirmar correo electronico</ion-label>
+                <ion-input formControlName="email2" id="email2" type="email" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Contraseña</ion-label>
+                <ion-input formControlName="password" id="password" type="password" pattern=".{8,}" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Confirmar contraseña</ion-label>
+                <ion-input formControlName="password2" id="password2" type="password" pattern=".{8,}" required></ion-input>
+            </ion-item>
+            <br><br>
+            <ion-label color="danger"><small>proximamente el administrador se pondra en contacto con usted </small>
+            </ion-label>
+            <br><br>
+        </ion-list>
+        <ion-button color="basketOrange">
+            <ion-label color="light" type="submit" >registrarse</ion-label>
+        </ion-button>
+    <!-- </form> -->
+
 </ion-content>

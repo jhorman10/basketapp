@@ -25,3 +25,8 @@ describe('UserRegisterPage', () => {
     expect(component).toBeTruthy();
   });
 });
+
+
+saveData(){
+  console.log(this.myForm.value);
+}

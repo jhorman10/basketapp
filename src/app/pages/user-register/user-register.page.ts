@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user-register',
@@ -6,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-register.page.scss'],
 })
 export class UserRegisterPage implements OnInit {
-
+  registro: FormGroup;
   constructor() { }
-
+  saveData(){
+    console.log(this.registro.value);
+  }
+  
   ngOnInit() {
   }
 
