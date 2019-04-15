@@ -12,4 +12,8 @@ export class AdminCreateCspFsPage implements OnInit {
   ngOnInit() {
   }
 
+  guardarTorneo() {
+    console.log('Creado correctamente.');
+  }
+
 }
