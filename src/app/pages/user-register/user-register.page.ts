@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 
@@ -8,32 +8,27 @@ import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms
   templateUrl: './user-register.page.html',
   styleUrls: ['./user-register.page.scss'],
 })
-export class UserRegisterPage implements OnInit {
-  registro: FormGroup;
-  constructor(
-  
-    public formBuilder: FormBuilder
-  )
-   { 
-    this.registro = this.createMyForm();
-  }
-  saveData(){
-    console.log(this.registro.value);
-  }
-  private createMyForm(){
-    return this.formBuilder.group({
-      name: ['', Validators.required],
-      cardid: ['', Validators.required],
-      email: ['', Validators.required],
-      email2: ['', Validators.required],
-      passwordRetry: this.formBuilder.group({
-        password: ['', Validators.required],
-        passwordConfirmation: ['', Validators.required]
-      }),
-      password2: ['', Validators.required],
 
-    });
+export class UserRegisterPage implements OnInit {
+
+  register: FormGroup;
+
+  constructor() {
+
+    this.register = new FormGroup({
+      'nombre': new FormControl({ '': [Validators.required, Validators.minLength(3)] }),
+      'cedula': new FormControl({ '': [Validators.required, Validators.minLength(6)] }),
+      'correo': new FormControl({ '': [Validators.required, Validators.pattern("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+/.[A-Za-z]{1,63}$")] }),
+      'correo2': new FormControl({ '': [Validators.required, Validators.pattern("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+/.[A-Za-z]{1,63}$")] }),
+      'pw': new FormControl({ '': [Validators.required, Validators.minLength(8)] }),
+      'pw2': new FormControl({ '': [Validators.required, Validators.minLength(8)] })
+    })
   }
+
+  saveData() {
+    console.log(this.register.value)
+  }
+
   ngOnInit() {
   }
 
