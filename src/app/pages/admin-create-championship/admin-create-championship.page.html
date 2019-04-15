@@ -20,7 +20,8 @@
     <ion-input  placeholder="Nombre del torneo"
             name="nombreTorneo"
             type="text"
-            class="adminNombreTorneo">
+            class="adminNombreTorneo"
+            style="font-family: 'Raleway-Light'">
     </ion-input>
 
     
@@ -33,9 +34,10 @@
         <ion-icon   name="trophy"
                     slot="start">
         </ion-icon>
-        <ion-label text-left><p style="font-weight: bold">Grupos + Playoff </p>Varios grupos y un playoff <br> para ganar el torneo</ion-label>
-        <ion-checkbox checked
-                    slot="end">
-        </ion-checkbox>
+        <ion-label text-left><p style="font-weight: bold; font-family: 'Raleway-Light'">Grupos + Playoff </p><p style="font-family: 'Raleway-Light'">Varios grupos y un playoff <br> para ganar el torneo</p> </ion-label>
+        <ion-radio checked
+                    slot="end"
+                    color="basketOrange">
+        </ion-radio>
     </ion-item>
 </ion-content>
