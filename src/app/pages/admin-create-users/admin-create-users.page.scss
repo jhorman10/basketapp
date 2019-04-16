@@ -4,11 +4,6 @@ ion-title {
     font-weight: bolder;
 }
 
-
-.btnAnadirJugador {
-    margin-left: 40%;
-}
-
 .botonCrearP {
     border-style: solid;
     border-width: 1px;
@@ -17,4 +12,39 @@ ion-title {
     color: white;
     font-size: 12px;
     height: 20px;
+}
+
+
+p {
+    text-align: center;
+    height: 15px;
+    background-color: #292929;
+    color:white;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+ion-input {
+    border-bottom: 0.5px solid #292929;
+    font-family: Raleway-Light;
+    margin-top: 10px;
+    ion-label {
+        color: black;
+        font-weight: bold;
+        padding-left: 20px;
+    }
+}
+
+.btnAddPlayer {
+    margin-top: 50px;
+    margin-left: 40%;
+    font-size: 40px;
+    color: black;
+
+    .iconAddPlayer {
+        border-style: solid;
+        border-color: #292929;
+        border-radius: 50px;
+        background-color: #FF5D00;
+    }
 }

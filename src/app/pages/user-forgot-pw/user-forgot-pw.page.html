@@ -1,27 +1,31 @@
 <app-headerbuttons titulo="olvidaste tu contraseña"></app-headerbuttons>
 
 <ion-content text-center>
-    <br>
-    <ion-item>
-        <ion-label position="floating">Nombre completo</ion-label>
-        <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label position="floating">Numero de cedula</ion-label>
-        <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label position="floating">Correo electronico</ion-label>
-        <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label position="floating">Confirmar correo electronico</ion-label>
-        <ion-input></ion-input>
-    </ion-item>
-    <br><br>
-    <ion-label color="danger"><small>proximamente el administrador se pondra en contacto con usted </small></ion-label>
-    <br><br>
-    <ion-button color="basketOrange" routerLink="/">
-        <ion-label color="light">Terminar</ion-label>
-    </ion-button>
+    <form [formGroup]="frmOlvidoContrasena" (ngSubmit)="sdForgotPass()">
+        <br>
+        <ion-item>
+            <ion-label position="floating">Nombre completo</ion-label>
+            <ion-input formControlName="nombre" type="text" name="nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Numero de cedula</ion-label>
+            <ion-input formControlName="cedula" type="number" name="cedula"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Correo electronico</ion-label>
+            <ion-input formControlName="correo" type="email" name="correo"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Confirmar correo electronico</ion-label>
+            <ion-input formControlName="correo2" type="email" name="correo2"></ion-input>
+        </ion-item>
+        <br><br>
+        <ion-label *ngIf="frmOlvidoContrasena.valid" color="danger"><small>proximamente el administrador se pondra en contacto con usted </small></ion-label>
+        <br><br>
+        <ion-button type="submit" [disabled]="!frmOlvidoContrasena.valid" color="basketOrange" routerLink="/">
+            <ion-label color="light">Terminar</ion-label>
+        </ion-button>
+        {{frmOlvidoContrasena.valid}}
+    </form>
+    
 </ion-content>

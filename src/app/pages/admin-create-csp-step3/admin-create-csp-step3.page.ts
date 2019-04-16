@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-create-csp-step3',
@@ -7,7 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminCreateCSPStep3Page implements OnInit {
 
-  constructor() { }
+  frmAddTeam: FormGroup;
+  equipos: [];
+
+
+  constructor() {
+    this.frmAddTeam = new FormGroup({
+      'equipos': new FormArray([
+        new FormControl('Gladiadores', Validators.required)
+      ])
+    });
+   }
+
+   addTeam() {
+     (<FormArray>this.frmAddTeam.controls['equipos']).push(
+       new FormControl('', Validators.required)
+     );
+   }
 
   ngOnInit() {
   }

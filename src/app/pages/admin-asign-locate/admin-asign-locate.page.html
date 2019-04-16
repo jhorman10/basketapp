@@ -1,15 +1,27 @@
-
-<app-headerbuttons titulo="grupo #"></app-headerbuttons>
+<ion-header no-border>
+    <ion-toolbar color="basketOrange">
+        <ion-buttons slot="start">
+            <ion-back-button class="backBtn" defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title text-capitalize class="tituloAdmin">GRUPO#</ion-title>
+        <ion-buttons slot="end">
+            <ion-button routerLink="/" class="btnSaveLocate">GUARDAR</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
 
 <ion-content>
-  <p>DIAS</p>
-  <ion-item detail (click)="presentAlert()">
-    <ion-label>Jornada 1</ion-label>
-  </ion-item>
-  <ion-item detail (click)="presentAlert()">
-    <ion-label>Jornada 2</ion-label>
-  </ion-item>
-  <ion-item detail (click)="presentAlert()">
-    <ion-label>Jornada 3</ion-label>
-  </ion-item>
+  <p>SELECCIONAR FECHA Y LUGAR</p>
+  <ion-list padding>
+    <ion-item detail (click)="presentAlert()">
+      <ion-label>Jornada 1</ion-label>
+    </ion-item>
+    <ion-item detail (click)="presentAlert()">
+      <ion-label>Jornada 2</ion-label>
+    </ion-item>
+    <ion-item detail (click)="presentAlert()">
+      <ion-label>Jornada 3</ion-label>
+    </ion-item>
+  </ion-list>
+  
 </ion-content>

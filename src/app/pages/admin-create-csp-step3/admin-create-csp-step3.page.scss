@@ -13,13 +13,24 @@ p {
     margin-top: 5px;
 }
 
+ion-input {
+    border-bottom: 0.5px solid #292929;
+    font-family: Raleway-Light;
+    margin-top: 10px;
+    ion-label {
+        color: black;
+        font-weight: bold;
+        padding-left: 20px;
+    }
+}
+
 .flNombreEquipo {
     border: solid 1px #292929;
 }
 
 .btnAddTeam {
-    margin-top: 100px;
-    margin-left: 140px;
+    margin-top: 50px;
+    margin-left: 40%;
     font-size: 40px;
     color: black;
 

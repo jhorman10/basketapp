@@ -1,0 +1,8 @@
+.ng-invalid.ng-touched:not(form) {
+    border-bottom: 1px solid red;
+}
+
+ion-item ion-label {
+    font-family: 'Raleway-Light';
+    font-size: 14px;
+}

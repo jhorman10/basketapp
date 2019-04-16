@@ -2,7 +2,7 @@
   <ion-toolbar color="basketOrange">
       <ion-buttons slot="start">
           <ion-back-button text="" color="light" defaultHref="/"></ion-back-button>
-          <ion-label slot="start">Grupo#</ion-label>
+          <ion-label color="light" slot="start">Grupo#</ion-label>
       </ion-buttons>
       <ion-title class="tituloAdmin" text-capitalize>EQUIPO#</ion-title>
       <ion-buttons slot="end">
@@ -15,47 +15,27 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+
     <p>JUGADORES</p>
-    <ion-item lines="none">
-        <ion-avatar slot="start">
-            <img src="../../../assets/avatar.jpg">
-        </ion-avatar>
-        <ion-item style="width: 500px">
-            <ion-select style="width: 500px" multiple="true" placeholder="Select Pizza">
-                <ion-select-option value="peperoni">Peperoni</ion-select-option>
-                <ion-select-option value="hawaii">Hawaii</ion-select-option>
-            </ion-select>
-        </ion-item>
-    </ion-item>
 
-    <ion-item lines="none">
-        <ion-avatar slot="start">
-            <img src="../../../assets/avatar.jpg">
-        </ion-avatar>
-        <ion-item style="width: 500px">
-            <ion-select style="width: 500px" multiple="true" placeholder="Select Pizza">
-                <ion-select-option value="peperoni">Peperoni</ion-select-option>
-                <ion-select-option value="hawaii">Hawaii</ion-select-option>
-            </ion-select>
-        </ion-item>
-    </ion-item>
+    <form [formGroup]="frmAddPlayer">
 
-    <ion-item lines="none">
-        <ion-avatar slot="start">
-            <img src="https://store.playstation.com/store/api/chihiro/00_09_000/container/MX/es/999/UP2477-CUSA06694_00-AV00000000000121/1553251072000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000">
-        </ion-avatar>
-        <ion-item style="width: 500px">
-            <ion-select style="width: 500px" multiple="false" placeholder="Select Pizza">
-                <ion-select-option value="peperoni">Peperoni</ion-select-option>
-                <ion-select-option value="hawaii">Hawaii</ion-select-option>
-            </ion-select>
-        </ion-item>
-    </ion-item>
+        <ion-list formArrayName="jugadores">
+            <ion-input  *ngFor="let jugador of frmAddPlayer.controls['jugadores'].controls; let i = index"
+                        [formControlName]="i"
+                        type="text">
+                <ion-label slot="start">Nombre Jugador: </ion-label>
+            </ion-input>
+        </ion-list>
 
-    <ion-buttons class="btnAnadirJugador">
-        <ion-button >
-            <ion-icon size="large" name="add"></ion-icon>
-        </ion-button>
-    </ion-buttons>
+        <ion-buttons class="btnAddPlayer">
+            <ion-button (click)="addPlayer()">
+                <ion-icon class="iconAddPlayer" size="large" name="add"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+    </form>
+
+    
 </ion-content>
