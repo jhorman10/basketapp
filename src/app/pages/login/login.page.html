@@ -4,27 +4,26 @@
         <ion-label color="light" style="font-weight: bolder">INICIA SESIÓN</ion-label>
     </h2>
     <br><br>
-    <ion-item color="transparent" lines="none">
-        <ion-input  type="email" 
+    <form [formGroup]="login" (ngSubmit)="loginInput()">
+        <ion-input  type="email"
+                    color="transparent"
                     inputmode="email" 
                     placeholder="Correo Electrónico" 
+                    formControlName="EmailLogin"
                     text-center
-                    style="font-family: 'Raleway-Light'">
+                    style="font-family: 'Raleway-Light'; color:white; font-weight: bold">
         </ion-input>
-    </ion-item>
-    <br>
-    <ion-item   color="transparent" 
-                text-center
-                lines="none"
-                >
+        <br>
         <ion-input  type="password" 
+                    color="transparent"
+                    formControlName="PwLogin"
                     inputmode="password" 
                     placeholder="Contraseña"
                     minLenght="8"
-                    style="font-family: 'Raleway-Light'"
+                    style="font-family: 'Raleway-Light'; color:white; font-weight: bold"
                     >
         </ion-input>
-    </ion-item>
+    </form>
     <br>
     <ion-label  text-center 
                 routerLink="/user-forgot-pw"
@@ -34,8 +33,11 @@
                 </small>
     </ion-label>
     <br><br><br>
-    <ion-button color="dark" type="submit">
-        Iniciar Sesión
+    <ion-button [disabled]="!login.valid" 
+                color="dark" type="submit" 
+                (click)=loginInput()
+                >
+                Iniciar Sesión
     </ion-button>
     <br><br>
     <ion-label  style="color: white; border-bottom: 1px solid #fff;"
@@ -58,7 +60,11 @@
     <ion-footer>
         <ion-toolbar text-center color="transparent">
             <ion-label color="light">
-                Sponsored By:
+                Sponsored By: 
+                <br>
+                XXXXXXXXXXXXXXX
+                <br>
+                <small>Powered By: Trascender Global</small>
             </ion-label>
         </ion-toolbar>
     </ion-footer>

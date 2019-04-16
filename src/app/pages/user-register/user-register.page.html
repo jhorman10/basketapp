@@ -26,15 +26,12 @@
             </ion-item>
             <ion-item>
                 <ion-label position="floating">Confirmar contraseña</ion-label>
-                <ion-input formControlName="pw2" type="password" required></ion-input>
+                <ion-input formControlName="pw2" name="pw2" type="password" required></ion-input>
             </ion-item>
             <br><br>
-            <ion-label *ngIf="register.valid" color="primary"><small>proximamente el administrador se pondra en contacto
-                    con usted </small>
-            </ion-label>
             <br><br>
         </ion-list>
-        <ion-button [disabled]="!register.valid"  color="basketOrange">
+        <ion-button [disabled]="!register.valid" color="basketOrange">
             <ion-label color="light" (click)=userRegister()>registrarse</ion-label>
         </ion-button>
     </form>
