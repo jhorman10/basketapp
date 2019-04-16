@@ -1,7 +1,7 @@
 <app-headerbuttons titulo="registrarse"></app-headerbuttons>
 
 <ion-content text-center>
-    <form [formGroup]="register" (ngSubmit)="saveData()">
+    <form [formGroup]="register" (ngSubmit)="userRegister()">
         <ion-list>
             <br>
             <ion-item>
@@ -34,8 +34,8 @@
             </ion-label>
             <br><br>
         </ion-list>
-        <ion-button color="basketOrange">
-            <ion-label color="light" type="submit">registrarse</ion-label>
+        <ion-button [disabled]="!register.valid"  color="basketOrange">
+            <ion-label color="light" (click)=userRegister()>registrarse</ion-label>
         </ion-button>
     </form>
 
