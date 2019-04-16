@@ -1,4 +1,9 @@
 
+ion-title {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
 .botonCrearP {
     border-style: solid;
     border-width: 1px;
@@ -7,7 +12,6 @@
     color: white;
     font-size: 12px;
     height: 20px;
-    border-style: outset;
 }
 
 .trofeoCrear {
@@ -33,7 +37,7 @@
 }
 
 .flechaAbajo {
-    color: #0088D9;
+    color: #292929;
     font-size: 60px;
     margin-top: 20px;
     margin-bottom: 10px;

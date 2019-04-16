@@ -1,9 +1,32 @@
-.botonCrearP {
-    border-style: solid;
-    border-width: 1px;
-    border-color: white;
-    border-radius: 5px;
-    color: white;
-    font-size: 12px;
-    height: 20px;
+
+ion-title {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+p {
+    text-align: center;
+    height: 15px;
+    background-color: #292929;
+    color:white;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.flNombreEquipo {
+    border: solid 1px #292929;
+}
+
+.btnAddTeam {
+    margin-top: 100px;
+    margin-left: 140px;
+    font-size: 40px;
+    color: black;
+
+    .iconAddTeam {
+        border-style: solid;
+        border-color: #292929;
+        border-radius: 50px;
+        background-color: #FF5D00;
+    }
 }

@@ -1,9 +1,32 @@
-.botonCrearP {
-    border-style: solid;
-    border-width: 1px;
-    border-color: white;
-    border-radius: 5px;
-    color: white;
-    font-size: 12px;
-    height: 20px;
+
+ion-title {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+p {
+    text-align: center;
+    height: 15px;
+    background-color: #292929;
+    color:white;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.flIngresarGrupos {
+    margin-bottom: 50px;
+    ion-icon {
+        margin-top: -5px;
+    }
+    .lbIngresarGrupos {
+        padding-left: 20px;
+    }
+}
+
+.lsGrupos {
+    text-align: center;
+}
+
+.lbGrupos {
+    border-bottom: 1px solid #000;
 }

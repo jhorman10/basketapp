@@ -1,35 +1,35 @@
-<ion-content padding text-center>
+<ion-content padding text-center scroll-y="false">
     <br><br><br>
     <h2 text-center>
-        <ion-label color="light">INICIA SESIÓN</ion-label>
+        <ion-label color="light" style="font-weight: bolder">INICIA SESIÓN</ion-label>
     </h2>
     <br><br>
-    <ion-item color="transparent">
-        <ion-input  color="light" 
-                    type="email" 
+    <ion-item color="transparent" lines="none">
+        <ion-input  type="email" 
                     inputmode="email" 
                     placeholder="Correo Electrónico" 
-                    text-center>
+                    text-center
+                    style="font-family: 'Raleway-Light'">
         </ion-input>
     </ion-item>
     <br>
     <ion-item   color="transparent" 
                 text-center
+                lines="none"
                 >
-        <ion-input  color="light" 
-                    type="password" 
+        <ion-input  type="password" 
                     inputmode="password" 
-                    placeholder="Contraseña" 
+                    placeholder="Contraseña"
                     minLenght="8"
+                    style="font-family: 'Raleway-Light'"
                     >
         </ion-input>
     </ion-item>
     <br>
     <ion-label  text-center 
-                routerLink="/user-forgot-pw" 
-                color="light"
+                routerLink="/user-forgot-pw"
                 >
-                <small>
+                <small style="color: white; border-bottom: 1px solid #fff;font-size: 12px">
                     ¿Olvidaste tu contraseña?
                 </small>
     </ion-label>
@@ -38,17 +38,23 @@
         Iniciar Sesión
     </ion-button>
     <br><br>
-    <ion-label  color="light" 
+    <ion-label  style="color: white; border-bottom: 1px solid #fff;"
                 routerLink="/user-register"
                 >
-                <small>
-                    Registrarse
-                </small> 
+                Registrarse
     </ion-label>
 
     <br><br><br>
-    <br><br><br>
+    <br>
     
+    <ion-button color="dark" routerLink="/user">
+        GO TO USERVIEW
+    </ion-button>
+
+    <ion-button color="dark" routerLink="/admin">
+        GO TO ADMINVIEW
+    </ion-button>
+
     <ion-footer>
         <ion-toolbar text-center color="transparent">
             <ion-label color="light">
@@ -56,12 +62,4 @@
             </ion-label>
         </ion-toolbar>
     </ion-footer>
-
-    <ion-button color="dark" routerLink="/user-register">
-        GO TO USERVIEW
-    </ion-button>
-
-    <ion-button color="dark" routerLink="/admin">
-        GO TO ADMINVIEW
-    </ion-button>
 </ion-content>

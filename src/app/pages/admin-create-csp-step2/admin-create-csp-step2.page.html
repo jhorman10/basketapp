@@ -3,46 +3,38 @@
       <ion-buttons slot="start">
           <ion-back-button color="light" defaultHref="/"></ion-back-button>
       </ion-buttons>
-      <ion-title class="tituloAdmin" text-capitalize>PASO 1 DE 2</ion-title>
+      <ion-title class="tituloAdmin" text-capitalize>GRUPOS</ion-title>
       <ion-buttons slot="end">
-          <ion-button class="botonCrearP" 
-                      size="small"                      
-                      routerLink="/admin-create-csp-step3">
-                      Siguiente
-          </ion-button>
+        <ion-button color="transparent">punto</ion-button>
       </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
-
-   <p class="configGrupos" >CONFIGURACIÓN DE GRUPOS</p>
-
-<ion-grid>
-  <ion-row class="numeroGrupos">
-    <ion-col size="2">
-      <ion-icon class="iconCreate" name="arrow-dropright-circle"></ion-icon>
-    </ion-col>
-    <ion-col size="8" align-self-center>
-      <ion-label (click)="presentAlert()">
-              Número de grupos
-      </ion-label>
-    </ion-col>
-    <ion-col size="2" align-self-center>
-      <ion-icon size="large" color="primary" name="arrow-dropright"></ion-icon>
-    </ion-col>
-  </ion-row>
-
-  <ion-row class="numeroGrupos">
-    <ion-col size="2">      
-      <ion-icon class="iconCreate" name="arrow-dropright-circle"></ion-icon>               
-    </ion-col>
-    <ion-col size="10" align-self-center>
-      <ion-label class="gruposTexto">GRUPOS</ion-label> <!--se hace un dropdown para ver los grupos agregados(grupoA, grupoB default) -->
-    </ion-col>
-  </ion-row> 
-
-</ion-grid>
-
+  <p>CONFIGURACIÓN DE GRUPOS</p>
+  <ion-grid>
+    <ion-row class="flIngresarGrupos">
+      <ion-col size="10">
+        <ion-label class="lbIngresarGrupos">Ingresar Número de Grupos</ion-label>
+      </ion-col>
+      <ion-col size="2">
+        <ion-icon size="large" (click)="presentAlert()" name="add-circle"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <p>LISTA DE GRUPOS</p>
+  <ion-grid>
+    <ion-row class="lsGrupos">
+      <ion-col>
+        <ion-label class="lbGrupos"
+                  routerLink="/admin-create-csp-step3">Grupo A</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="lsGrupos">
+      <ion-col>
+        <ion-label class="lbGrupos"
+                  routerLink="/admin-create-csp-step3">Grupo B</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
