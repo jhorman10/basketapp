@@ -19,6 +19,7 @@
     <ion-list formArrayName="equipos">      
       <ion-input  *ngFor="let equipo of frmAddTeam.controls['equipos'].controls; let i = index" 
                   [formControlName]="i" type="text"
+                  routerLink="/admin-create-users"
                   >
                   <ion-label slot="start">Nombre Equipo: </ion-label>
       </ion-input>

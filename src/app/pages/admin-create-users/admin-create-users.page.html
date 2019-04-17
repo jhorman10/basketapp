@@ -21,19 +21,38 @@
 
     <form [formGroup]="frmAddPlayer">
 
+        <ion-input type="text" placeholder="Ingrese el jugador" #ipNombreJugador>
+            <ion-label slot="start">Nombre Jugador: </ion-label>
+        </ion-input>
+
+
+        <ion-grid>
+            <ion-row>
+                <ion-col size="6">
+                        <ion-buttons class="btnAddPlayer">
+                            <ion-button (click)="addPlayer(ipNombreJugador.value)">
+                                <ion-icon class="iconAddPlayer" size="large" name="add"></ion-icon>
+                            </ion-button>
+                        </ion-buttons>
+                </ion-col>
+                <ion-col size="6">
+                        <ion-buttons class="btnAddPlayer">
+                            <ion-button>
+                                <ion-icon class="iconAddPlayer" size="large" slot="end" name="remove"></ion-icon>
+                            </ion-button>
+                        </ion-buttons>
+                </ion-col>
+            </ion-row>
+        </ion-grid>        
+
         <ion-list formArrayName="jugadores">
             <ion-input  *ngFor="let jugador of frmAddPlayer.controls['jugadores'].controls; let i = index"
                         [formControlName]="i"
                         type="text">
-                <ion-label slot="start">Nombre Jugador: </ion-label>
+                <ion-label slot="start">Nombre Jugador:
+                </ion-label>                
             </ion-input>
         </ion-list>
-
-        <ion-buttons class="btnAddPlayer">
-            <ion-button (click)="addPlayer()">
-                <ion-icon class="iconAddPlayer" size="large" name="add"></ion-icon>
-            </ion-button>
-        </ion-buttons>
 
     </form>
 

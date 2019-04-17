@@ -26,8 +26,14 @@ export class LoginPage implements OnInit {
 loginInput(correo: string, password: string) {
   this.correo = correo;
   this.password = password;
-  if (this.correo === 'aol@aol.com' && this.password === '12345678') {
+  // Credenciales ADMIN
+  if (this.correo === 'admin@aol.com' && this.password === '12345678') {
     this.rutas.navigateByUrl('/admin');
+    this.guardarStorage();
+  }
+  // Credenciales USER
+  if (this.correo === 'user@aol.com' && this.password === '12345678') {
+    this.rutas.navigateByUrl('/user');
     this.guardarStorage();
   }
   this.login.reset({

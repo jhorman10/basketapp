@@ -59,12 +59,13 @@
         </ion-label>
     </ion-item>
 <p>
-
+SALIR
 </p>
-    <ion-item detail >
-        <ion-icon slot="start" name="trophy"></ion-icon>
+
+    <ion-item lines="none" detail (click)="cerrarSesion()">
+        <ion-icon slot="start" name="close-circle"></ion-icon>
         <ion-label>
-            TORNEO
+           CERRAR SESIÓN
         </ion-label>
     </ion-item>
 </ion-content>

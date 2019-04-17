@@ -11,7 +11,6 @@ export class AdminCreateUsersPage implements OnInit {
   frmAddPlayer: FormGroup;
   jugadores: [];
 
-
   constructor() {
     this.frmAddPlayer = new FormGroup({
       'jugadores': new FormArray([
@@ -20,7 +19,7 @@ export class AdminCreateUsersPage implements OnInit {
     });
    }
 
-   addPlayer() {
+   addPlayer(nombreJugador: string) {
      (<FormArray>this.frmAddPlayer.controls['jugadores']).push(
        new FormControl('', Validators.required)
      );

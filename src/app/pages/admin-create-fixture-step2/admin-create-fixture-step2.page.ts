@@ -1,3 +1,4 @@
+import { AlertController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdmincreateFixtureStep2Page implements OnInit {
 
-  constructor() { }
+  constructor(public alertCtrl: AlertController) { }
 
   ngOnInit() {
+  }
+
+  async selManual() {
+    const alert = await this.alertCtrl.create({
+      header: 'Equipos!',
+      message: 'Seleccione los equipos a enfrentar.',
+      inputs: [
+        {
+          name: 'equipo1',
+          type: 'text',
+          value: 'Leones',
+          placeholder: 'Equipo 1'
+        },
+        {
+          name: 'equipo2',
+          type: 'text',
+          value: 'Ferro',
+          placeholder: 'Equipo 2'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Confirmar',
+          handler: () => {
+            console.log('Confirm Okay');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
 }

@@ -1,9 +1,47 @@
-<app-headerbuttons titulo="Ingresar Estadísticas"></app-headerbuttons>
+<ion-header no-border>
+  <ion-toolbar color="basketOrange">
+      <ion-buttons slot="start">
+          <ion-back-button text="" color="light" defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title class="tlEstadisticas" text-capitalize>Ingreso Estadísticas</ion-title>
+      <ion-buttons slot="end">
+          <ion-button class="botonCrearP" 
+                      size="small"                      
+                      routerLink="/admin">
+                      Guardar
+          </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content>
+
     <ion-list>
+        <p>RESULTADO</p>
         <ion-item>
-            <ion-label>Troncos VS CienDeCilantro</ion-label>
+            <ion-label slot="start">Ganador</ion-label>
+            <ion-input slot="end" type="text" placeholder="Team"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label slot="start">Perdedor</ion-label>
+            <ion-input slot="end" type="text" placeholder="Team"></ion-input>
+        </ion-item>
+        <p>ESTADISTICAS</p>
+        <ion-item>
+            <ion-label slot="start">Mayor Anotador Dobles</ion-label>
+            <ion-input slot="end" type="text" placeholder="Player"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label slot="start">Mayor Anotador Dobles</ion-label>
+            <ion-input slot="end" type="text" placeholder="Player"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label slot="start">Dobles Equipo 1</ion-label>
+            <ion-input slot="end" type="number" placeholder="Cantidad"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label slot="start">Dobles Equipo 2</ion-label>
+            <ion-input slot="end" type="number" placeholder="Cantidad"></ion-input>
         </ion-item>
     </ion-list>
     
