@@ -1,5 +1,8 @@
-import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { UsuarioModel } from 'src/app/models/usuario.model';
+
 
 @Component({
   selector: 'app-user-forgot-pw',
@@ -8,44 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserForgotPwPage implements OnInit {
 
-  frmOlvidoContrasena: FormGroup;
+  usuario = new UsuarioModel();
 
-  constructor() {
-    this.frmOlvidoContrasena = new FormGroup({
-      'nombre': new FormControl( '', [Validators.required, Validators.minLength(3)] ),
-      'cedula': new FormControl( '', [Validators.required, Validators.minLength(6)] ),
-      'correo': new FormControl( '', [Validators.required, Validators.email] ),
-      'correo2': new FormControl( '', [Validators.required, Validators.email] ),
-    });
+  constructor(private router: Router) {
 
-    this.frmOlvidoContrasena.controls['correo'].setValidators([
-      Validators.required,
-      Validators.email,
-      this.maildDontMatch.bind(this.frmOlvidoContrasena)
-    ]);
-   }
-
-   maildDontMatch(control: FormControl): {[s: string]: boolean} {
-     let frmOlvidoContrasena: any = this;
-     if (control.value !== frmOlvidoContrasena.controls['correo'].value) {
-       return {
-         noesigual: true
-       };
-     }
-     return null;
-   }
-
-   sdForgotPass() {
-    console.log('Se envió su solicitud correctamente.');
-    this.frmOlvidoContrasena.reset({
-      nombre: '',
-      cedula: '',
-      correo: '',
-      correo2: ''
-    });
    }
 
   ngOnInit() {
+  }
+
+  userFogtot(form: NgForm) {
+
+    if (form.invalid) { return; }
+
+    this.router.navigateByUrl('/login');
   }
 
 }

@@ -1,39 +1,82 @@
 <app-headerbuttons titulo="registrarse"></app-headerbuttons>
 
 <ion-content text-center>
-    <form [formGroup]="register" (ngSubmit)="userRegister()">
+    <form (ngSubmit)="userRegister(register); register.reset()" #register="ngForm">
         <ion-list>
             <br>
             <ion-item>
                 <ion-label position="floating">Nombre completo</ion-label>
-                <ion-input formControlName="nombre" type="text" required></ion-input>
+                <ion-input  type="text" 
+                            name="nombre" 
+                            [(ngModel)]="usuario.nombre"
+                            minlength="2" 
+                            required
+                            #nombre 
+                            >
+                </ion-input>
             </ion-item>
             <ion-item>
-                <ion-label position="floating">Numero de cedula</ion-label>
-                <ion-input formControlName="cedula" type="number" required></ion-input>
+                <ion-label position="floating">Numero de cédula</ion-label>
+                <ion-input  type="number"
+                            name="cedular"
+                            [(ngModel)]="usuario.cedula"
+                            minlength="2"
+                            #cedula
+                            required
+                            >
+                </ion-input>
             </ion-item>
             <ion-item>
                 <ion-label position="floating">Correo electronico</ion-label>
-                <ion-input formControlName="correo" type="email" required></ion-input>
+                <ion-input  type="email" 
+                            name="email"
+                            [(ngModel)]="usuario.email"
+                            #email
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                            required
+                            >
+                </ion-input>
             </ion-item>
             <ion-item>
                 <ion-label position="floating">Confirmar correo electronico</ion-label>
-                <ion-input formControlName="correo2" type="email" required></ion-input>
-            </ion-item>
+                <ion-input  type="email" 
+                            name="email2"
+                            [(ngModel)]="usuario.email2"
+                            #email2
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                            required
+                            >
+            </ion-input>
+        </ion-item>
+        <ion-label *ngIf="email.value != email2.value" style="color: red;">El correo no es igual</ion-label>
             <ion-item>
                 <ion-label position="floating">Contraseña</ion-label>
-                <ion-input formControlName="password" type="password" required></ion-input>
+                <ion-input  type="password"
+                            name="password"
+                            #password
+                            [(ngModel)]="usuario.password"
+                            minlength="6"
+                            required>
+                </ion-input>
             </ion-item>
             <ion-item>
                 <ion-label position="floating">Confirmar contraseña</ion-label>
-                <ion-input formControlName="password2"type="password" required></ion-input>
-            </ion-item>
+                <ion-input  type="password"
+                            name="password2"
+                            [(ngModel)]="usuario.password2"
+                            #password2
+                            minlength="6"
+                            required
+                            >
+            </ion-input>
+        </ion-item>
+        <ion-label *ngIf="password.value != password2.value" style="color: red;">La contraseña no es igual</ion-label>
             <br><br>
         </ion-list>
         <!-- <label style="color: red;" *ngIf="!register.valid" ><small>Luego de registrarse el Admin se pondra en contacto con usted</small></label> -->
         <br><br>
-        <ion-button [disabled]="!register.valid" color="basketOrange">
-            <ion-label color="light" (click)=userRegister()>registrarse</ion-label>
+        <ion-button type="submit" color="basketOrange">
+            <ion-label color="light">registrarse</ion-label>
         </ion-button>
     </form>
 </ion-content>

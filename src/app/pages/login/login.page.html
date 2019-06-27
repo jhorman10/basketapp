@@ -4,61 +4,47 @@
         <ion-label color="light" style="font-weight: bolder">INICIA SESIÓN</ion-label>
     </h2>
     <br><br>
-    <form [formGroup]="login" (ngSubmit)="loginInput()">
+    <form #loginF="ngForm" (ngSubmit)="login(loginF); loginF.reset()">
         <ion-input  type="email"
                     color="transparent"
-                    inputmode="email" 
                     placeholder="Correo Electrónico" 
-                    formControlName="EmailLogin"
+                    [(ngModel)]="usuario.email"
+                    name="mail"
+                    email
                     text-center
                     style="font-family: 'Raleway-Light'; color:white; font-weight: bold"
-                    #correo>
+                    #mail>
         </ion-input>
         <br>
         <ion-input  type="password" 
                     color="transparent"
-                    formControlName="PwLogin"
-                    inputmode="password" 
                     placeholder="Contraseña"
-                    minLenght="8"
+                    [(ngModel)]="usuario.password"
+                    name="password"
+                    password
+                    minLenght="6"
                     style="font-family: 'Raleway-Light'; color:white; font-weight: bold"
-                    #password
-                    >
+                    #password>
         </ion-input>
+        <br>
+        <ion-label  text-center 
+                    routerLink="/user-forgot-pw">
+                    <small style="color: white; border-bottom: 1px solid #fff;font-size: 12px">
+                        ¿Olvidaste tu contraseña?
+                    </small>
+        </ion-label>
+        <br><br><br>
+        <ion-button color="dark" type="submit">
+                    Iniciar Sesión
+        </ion-button>
+        <br><br>
+        <ion-label  style="color: white; border-bottom: 1px solid #fff;"
+                    routerLink="/user-register">
+                    Registrarse
+        </ion-label>
     </form>
-    <br>
-    <ion-label  text-center 
-                routerLink="/user-forgot-pw"
-                >
-                <small style="color: white; border-bottom: 1px solid #fff;font-size: 12px">
-                    ¿Olvidaste tu contraseña?
-                </small>
-    </ion-label>
-    <br><br><br>
-    <ion-button [disabled]="!login.valid" 
-                color="dark" type="submit" 
-                (click)="loginInput(correo.value, password.value)"
-                >
-                Iniciar Sesión
-    </ion-button>
-    <br><br>
-    <ion-label  style="color: white; border-bottom: 1px solid #fff;"
-                routerLink="/user-register"
-                >
-                Registrarse
-    </ion-label>
-
     <br><br><br>
     <br>
-    
-    <!-- <ion-button color="dark" routerLink="/user">
-        GO TO USERVIEW
-    </ion-button>
-
-    <ion-button color="dark" routerLink="/admin">
-        GO TO ADMINVIEW
-    </ion-button> -->
-
     <ion-footer>
         <ion-toolbar text-center color="transparent">
             <ion-label color="light">
@@ -66,7 +52,7 @@
                 <br>
                 XXXXXXXXXXXXXXX
                 <br>
-                <small>Powered By: Trascender Global</small>
+                <small>Powered By: Trascender Global &copy;</small>
             </ion-label>
         </ion-toolbar>
     </ion-footer>
