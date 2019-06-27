@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { UsuarioModel } from '../model/UsuarioModel';
+import { UsuarioModel } from '../models/usuario.model';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -18,8 +19,14 @@ export class AuthService {
 
   private URL = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty';
   private APIkey = 'AIzaSyBdrK2N_o_0Hx2-ulVOM79ZBgiGQHdbtNE';
+  userToken: string;
+  constructor(private http: HttpClient) {
+    this.leerToken();
+  }
 
-  constructor(private http: HttpClient) {  }
+  logout() {
+    localStorage.removeItem('token');
+  }
 
   login( usuario: UsuarioModel ) {
 
@@ -28,10 +35,16 @@ export class AuthService {
       returnSecureToken: true
     };
 
-    return this.http.post(`${this.URL}/verifyPassword?key=${this.APIkey}`,
-    authData);
+    return this.http.post(
+      `${ this.URL }/verifyPassword?key=${ this.APIkey }`,
+      authData
+    ).pipe(
+      map( resp => {
+        this.guardarToken( resp['idToken'] );
+        return resp;
+      })
+    );
   }
-
 
   logup(usuario: UsuarioModel) {
 
@@ -43,11 +56,51 @@ export class AuthService {
     return this.http.post(
       `${this.URL}/signupNewUser?key=${this.APIkey}`,
       authData
+    ).pipe(
+      map( resp => {
+        this.guardarToken( resp['idToken'] );
+        return resp;
+      })
     );
   }
 
-  logout() {
+  private guardarToken( idToken: string ) {
 
+    this.userToken = idToken;
+    localStorage.setItem('token', idToken);
+
+    let hoy = new Date();
+    hoy.setSeconds( 3600 );
+
+    localStorage.setItem('expira', hoy.getTime().toString() );
+  }
+
+  leerToken() {
+
+    if ( localStorage.getItem('token') ) {
+      this.userToken = localStorage.getItem('token');
+    } else {
+      this.userToken = '';
+    }
+    return this.userToken;
+
+  }
+
+  estaAutenticado(): boolean {
+
+    if ( this.userToken.length < 2 ) {
+      return false;
+    }
+
+    const expira = Number(localStorage.getItem('expira'));
+    const expiraDate = new Date();
+    expiraDate.setTime(expira);
+
+    if ( expiraDate > new Date() ) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 }
