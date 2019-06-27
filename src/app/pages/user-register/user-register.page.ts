@@ -1,3 +1,6 @@
+import { Router } from '@angular/router';
+import { UsuarioModel } from './../../model/UsuarioModel';
+import { AuthService } from './../../service/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -10,67 +13,77 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class UserRegisterPage implements OnInit {
 
   register: FormGroup;
+  usuario = new UsuarioModel();
 
-  constructor() {
+  constructor( private auth: AuthService,
+               private router: Router) {
 
     this.register = new FormGroup({
       'nombre': new FormControl( '', [Validators.required, Validators.minLength(3)] ),
       'cedula': new FormControl( '', [Validators.required, Validators.minLength(6)] ),
       'correo': new FormControl( '', [Validators.required, Validators.email] ),
       'correo2': new FormControl( '', [Validators.required, Validators.email] ),
-      'pw': new FormControl( '', [Validators.required, Validators.minLength(8)] ),
-      'pw2': new FormControl( '', [Validators.required, Validators.minLength(8)] )
+      'password': new FormControl( '', [Validators.required, Validators.minLength(8)] ),
+      'password2': new FormControl( '', [Validators.required, Validators.minLength(8)] )
     });
 
     this.register.controls['correo2'].setValidators([
       Validators.required,
       this.EmailNotEquals.bind(this.register)
-    ])
+    ]);
 
-    this.register.controls['pw2'].setValidators([
+    this.register.controls['password2'].setValidators([
       Validators.required,
       this.PwNotEquals.bind(this.register)
-    ])
+    ]);
 
   }
 
-  PwNotEquals(control:FormControl): { [s:string]:boolean } {
+  PwNotEquals(control: FormControl): { [s: string]: boolean } {
 
-    let register:any=this;
+    const register: any = this;
 
-    if(control.value !== register.controls['pw'].value){
+    if (control.value !== register.controls['password'].value) {
       return{
-        PwNotEquals:true
-      }
+        PwNotEquals: true
+      };
     }
     return null;
   }
 
-  EmailNotEquals(control:FormControl): { [s:string]:boolean } {
+  EmailNotEquals(control: FormControl): { [s: string]: boolean } {
 
-    let register:any=this;
+    const register: any = this;
 
-    if(control.value !== register.controls['correo'].value){
+    if (control.value !== register.controls['correo'].value) {
       return{
-        PwNotEquals:true
-      }
+        PwNotEquals: true
+      };
     }
     return null;
   }
 
   userRegister() {
-    console.log(this.register.value);
+    // console.log(this.register.value);
+    // console.log(this.usuario);
+    // console.log(this.usuario);
+    this.auth.logup(this.usuario)
+              .subscribe(resp => {
+                console.log(resp);
+              });
     this.register.reset({
-      nombre: "",
-      cedula: "",
-      correo: "",
-      correo2: "",
-      pw: "",
-      pw2: ""
+      nombre: '',
+      cedula: '',
+      correo: '',
+      correo2: '',
+      pw: '',
+      pw2: ''
     });
+    this.router.navigateByUrl('/login');
   }
 
   ngOnInit() {
+    this.usuario = this.register.value;
   }
 
 }
