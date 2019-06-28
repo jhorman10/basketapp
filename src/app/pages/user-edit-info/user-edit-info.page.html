@@ -9,29 +9,29 @@
                 </ion-avatar> 
             </ion-item>
             <ion-button color="basketOrange" (click)="CambiarFoto()">
-                <ion-label color="light">Cambiar foto </ion-label>                
+                <ion-label color="light" style="font-family: 'Raleway-Light'">Cambiar foto </ion-label>                
             </ion-button>
             <form [formGroup]="UserEditInfo" (ngSubmit)="UserEditInformation()">
                 <ion-list>
                 <br>
                 <ion-item>
-                    <ion-label position="floating">Cambiar Nombre</ion-label>
+                    <ion-label position="floating" style="font-family: 'Raleway-Light'">Cambiar Nombre</ion-label>
                     <ion-input formControlName="nombre" type="text" required></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label position="floating">Cambiar correo</ion-label>
+                    <ion-label position="floating" style="font-family: 'Raleway-Light'">Cambiar correo</ion-label>
                     <ion-input formControlName="correo" type="email" required></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label position="floating">Repetir correo</ion-label>
+                    <ion-label position="floating" style="font-family: 'Raleway-Light'">Repetir correo</ion-label>
                     <ion-input formControlName="correo2" type="email" required></ion-input>
                 </ion-item>
                 <ion-item lines="none">
-                    <ion-label position="floating">Cambiar contraseña</ion-label>
+                    <ion-label position="floating" style="font-family: 'Raleway-Light'">Cambiar contraseña</ion-label>
                     <ion-input formControlName="pw" type="password" required></ion-input>
                 </ion-item>
                 <ion-item lines="none">
-                    <ion-label position="floating">Repetir contraseña</ion-label>
+                    <ion-label position="floating" style="font-family: 'Raleway-Light'">Repetir contraseña</ion-label>
                     <ion-input formControlName="pw2" type="password" required></ion-input>
                 </ion-item>
             </ion-list>
@@ -39,6 +39,6 @@
         </ion-card-content>
     </ion-card>
     <ion-button [disabled]="!UserEditInfo.valid" color="basketOrange">
-         <ion-label color="light">Guardar</ion-label>
+         <ion-label color="light" style="font-family: 'Raleway-Light'">Guardar</ion-label>
     </ion-button>
 </ion-content>
