@@ -16,18 +16,21 @@
 
   <form [formGroup]="frmAddTeam">
 
-    <ion-list formArrayName="equipos">      
+    <ion-list formArrayName="equipos">
       <ion-input  *ngFor="let equipo of frmAddTeam.controls['equipos'].controls; let i = index" 
                   [formControlName]="i" type="text"
-                  routerLink="/admin-create-users"
                   >
+                  <ion-button slot="start" color="basketOrange" routerLink="/admin-create-users">
+                    <ion-icon name="arrow-forward"></ion-icon>
+                  </ion-button>
                   <ion-label slot="start">Nombre Equipo: </ion-label>
+                  
       </ion-input>
     </ion-list>
 
     <ion-buttons class="btnAddTeam">
       <ion-button (click)="addTeam()">
-        <ion-icon class="iconAddTeam" size="large" 
+        <ion-icon class="iconAddTeam" size="large"
                   name="add">
         </ion-icon>
       </ion-button>
