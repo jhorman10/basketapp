@@ -5,4 +5,5 @@ export class UsuarioModel {
     password2?: string;
     nombre?: string;
     cedula?: string;
+    Rol ? = '0';
 }

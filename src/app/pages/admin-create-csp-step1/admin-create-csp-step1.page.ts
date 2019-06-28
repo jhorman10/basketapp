@@ -1,5 +1,10 @@
+import { CRUDserviceService } from './../../service/crudservice.service';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { TorneoModel } from './../../models/torneo.model';
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-admin-create-csp-step1',
@@ -8,9 +13,26 @@ import { AlertController } from '@ionic/angular';
 })
 export class AdminCreateCSPStep1Page implements OnInit {
 
-  constructor(public alertCtrl: AlertController) { }
+  torneo: TorneoModel;
+
+  constructor(public alertCtrl: AlertController,
+              private CRUD: CRUDserviceService,
+              private router: Router) { }
+
+
+  crearTorneo(form: NgForm) {
+    if (form.invalid) { return; }
+
+    this.CRUD.crearTorneo(this.torneo)
+            .subscribe(resp => {
+              console.log(resp);
+            });
+
+    this.router.navigateByUrl('/admin-create-csp-step2');
+  }
 
   ngOnInit() {
+    this.torneo = new TorneoModel();
   }
 
 }
