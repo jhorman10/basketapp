@@ -1,3 +1,7 @@
+import { Router } from '@angular/router';
+import { CRUDserviceService } from './../../service/crudservice.service';
+import { NgForm } from '@angular/forms';
+import { GrupoModel } from './../../models/grupo.model';
 import { AlertController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,24 +12,50 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminCreateCSPStep2Page implements OnInit {
 
-  constructor(public alertCtrl: AlertController) { }
+  grupos: GrupoModel;
+
+  constructor(public alertCtrl: AlertController,
+              private CRUD: CRUDserviceService,
+              private router: Router) { }
 
   ngOnInit() {
+    this.grupos = new GrupoModel();
   }
 
-  async presentAlert() {
-    const alert = await this.alertCtrl.create({
-      header: 'Número de grupos',
-      inputs: [
-        {
-          name: 'numero_grupos',
-          type: 'number'
-        }
-      ],
-      buttons: ['Cancelar', 'OK']
+  // async presentAlert() {
+  //   const alert = await this.alertCtrl.create({
+  //     header: 'Número de grupos',
+  //     inputs: [
+  //       {
+  //         name: 'numero_grupos',
+  //         type: 'number'
+  //       }
+  //     ],
+  //     buttons: ['Cancelar', 'OK']
+  //   });
+
+  //   await alert.present();
+  // }
+
+  crearGrupos(form: NgForm) {
+    if (form.invalid) { return; }
+
+    if (this.grupos.ID) {
+
+    this.CRUD.actualizarGrupos(this.grupos)
+    .subscribe(resp => {
+      console.log(resp);
     });
 
-    await alert.present();
+    } else {
+
+      this.CRUD.crearGrupo(this.grupos)
+      .subscribe(resp => {
+        console.log(resp);
+      });
+    }
+
+    this.router.navigateByUrl('/admin-create-csp-step3');
   }
 
 }

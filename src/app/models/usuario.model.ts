@@ -5,5 +5,6 @@ export class UsuarioModel {
     password2?: string;
     nombre?: string;
     cedula?: string;
+    ID?: string;
     Rol ? = '0';
 }

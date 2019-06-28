@@ -6,5 +6,5 @@ export class TorneoModel {
  puntoXperder?: string;
  puntosXw?: string;
  ID?: string;
- CantidadGrupos?:string;
+ CantidadGrupos?: string;
 }

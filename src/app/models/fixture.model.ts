@@ -1,3 +1,4 @@
 export class FixtureModel {
-    fechaUbicacion: string;
+    fechaUbicacion?: string;
+    ID?: string;
 }

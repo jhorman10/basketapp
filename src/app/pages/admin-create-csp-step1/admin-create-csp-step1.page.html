@@ -1,10 +1,10 @@
 <ion-header no-border>
   <ion-toolbar color="basketOrange">
-      <ion-buttons slot="start">
-          <ion-back-button color="light" defaultHref="/"></ion-back-button>
-      </ion-buttons>
-      <ion-title class="tituloAdmin" text-left text-capitalize style="margin-left: 15%">AJUSTES</ion-title>
-      <!-- <ion-buttons slot="end">
+    <ion-buttons slot="start">
+      <ion-back-button color="light" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="tituloAdmin" text-left text-capitalize style="margin-left: 15%">AJUSTES</ion-title>
+    <!-- <ion-buttons slot="end">
           <ion-button class="btnGuardar"
                       routerLink="/admin-create-csp-step2">
                       Siguiente
@@ -79,85 +79,53 @@
 <!-- Nuevo Formulario -->
 
 <ion-content text-center>
-    <form (ngSubmit)="crearTorneo(registerT); registerT.reset()" #registerT="ngForm">
-        <ion-list>
-            <br>
-            <ion-item>
-                <ion-label style="font-family: 'Raleway-Light'" position="floating">Nombre torneo</ion-label>
-                <ion-input  type="text" 
-                            name="nombre" 
-                            [(ngModel)]="torneo.nombre"
-                            minlength="2" 
-                            required
-                            #nombre
-                            style="font-family: 'Raleway-Light'"
-                            >
-                </ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label style="font-family: 'Raleway-Light'" position="floating">Ciudad</ion-label>
-                <ion-input  type="text"
-                            name="ciudad"
-                            [(ngModel)]="torneo.ciudad"
-                            minlength="2"
-                            #ciudad
-                            required
-                            style="font-family: 'Raleway-Light'"
-                            >
-                </ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label style="font-family: 'Raleway-Light'" position="floating">Genero</ion-label>
-                <ion-input  type="text" 
-                            name="genero"
-                            [(ngModel)]="torneo.genero"
-                            #genero
-                            required
-                            style="font-family: 'Raleway-Light'"
-                            >
-                </ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label style="font-family: 'Raleway-Light'" position="floating">Puntos por ganar</ion-label>
-                <ion-input  type="number" 
-                            name="PuntosGanar"
-                            [(ngModel)]="torneo.puntosXganar"
-                            #PuntosGanar
-                            required
-                            style="font-family: 'Raleway-Light'"
-                            >
-            </ion-input>
-        </ion-item>
-            <ion-item>
-                <ion-label style="font-family: 'Raleway-Light'"  position="floating">Puntos por perder</ion-label>
-                <ion-input  type="number"
-                            name="PuntosPerder"
-                            #PuntosPerder
-                            [(ngModel)]="torneo.puntoXperder"
-                            required
-                            style="font-family: 'Raleway-Light'" >
-                </ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label style="font-family: 'Raleway-Light'"  position="floating">Puntos por W</ion-label>
-                <ion-input  type="number"
-                            name="PuntosW"
-                            [(ngModel)]="torneo.puntosXw"
-                            #PuntosW
-                            required
-                            style="font-family: 'Raleway-Light'" 
-                            >
-            </ion-input>
-        </ion-item>
-            <br><br>
-        </ion-list>
-        <!-- <label style="color: red;" *ngIf="!register.valid" ><small>Luego de registrarse el Admin se pondra en contacto con usted</small></label> -->
-        <br><br>
-        <ion-button type="submit" color="basketOrange">
-            <ion-label  style="font-family: 'Raleway-Light'" 
-                        color="light">
-                        Registrar torneo
-            </ion-label>
-        </ion-button>
-    </form>
+  <form (ngSubmit)="crearTorneo(registerT); registerT.reset()" #registerT="ngForm">
+    <ion-list>
+      <br>
+      <ion-item>
+        <ion-label style="font-family: 'Raleway-Light'" position="floating">Nombre torneo</ion-label>
+        <ion-input type="text" name="nombre" [(ngModel)]="torneo.nombre" minlength="2" required #nombre
+          style="font-family: 'Raleway-Light'">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-family: 'Raleway-Light'" position="floating">Ciudad</ion-label>
+        <ion-input type="text" name="ciudad" [(ngModel)]="torneo.ciudad" minlength="2" #ciudad required
+          style="font-family: 'Raleway-Light'">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-family: 'Raleway-Light'" position="floating">Genero</ion-label>
+        <ion-input type="text" name="genero" [(ngModel)]="torneo.genero" #genero required
+          style="font-family: 'Raleway-Light'">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-family: 'Raleway-Light'" position="floating">Puntos por ganar</ion-label>
+        <ion-input type="number" name="PuntosGanar" [(ngModel)]="torneo.puntosXganar" #PuntosGanar required
+          style="font-family: 'Raleway-Light'">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-family: 'Raleway-Light'" position="floating">Puntos por perder</ion-label>
+        <ion-input type="number" name="PuntosPerder" #PuntosPerder [(ngModel)]="torneo.puntoXperder" required
+          style="font-family: 'Raleway-Light'">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-family: 'Raleway-Light'" position="floating">Puntos por W</ion-label>
+        <ion-input type="number" name="PuntosW" [(ngModel)]="torneo.puntosXw" #PuntosW required
+          style="font-family: 'Raleway-Light'">
+        </ion-input>
+      </ion-item>
+      <br><br>
+    </ion-list>
+    <!-- <label style="color: red;" *ngIf="!register.valid" ><small>Luego de registrarse el Admin se pondra en contacto con usted</small></label> -->
+    <br><br>
+    <ion-button type="submit" color="basketOrange">
+      <ion-label style="font-family: 'Raleway-Light'" color="light">
+        Registrar torneo
+      </ion-label>
+    </ion-button>
+  </form>
 </ion-content>

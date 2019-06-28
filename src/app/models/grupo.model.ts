@@ -1,3 +1,5 @@
 export class GrupoModel {
-    cantidadGrupos: string
+    nombreGrupo: string;
+    cantidadEquipos: string;
+    ID: string;
 }
