@@ -13,7 +13,7 @@ export class LoginPage implements OnInit {
 
   correo: string;
   password: string;
-  usuario: UsuarioModel = new UsuarioModel();
+  usuario: UsuarioModel;
 
 
   constructor(private auth: AuthService,
@@ -22,32 +22,35 @@ export class LoginPage implements OnInit {
   }
 
 
-login(form: NgForm) {
+  login(form: NgForm) {
 
-  if (this.usuario.email == 'basket@basket.com' && this.usuario.password == 'basket123') {
-    this.router.navigateByUrl('/admin');
-  } else {
-      this.auth.login( this.usuario )
-                .subscribe( resp => {
+    if (form.invalid) { return; }
 
-        console.log(resp);
-        this.router.navigateByUrl('/user');
-        this.guardarStorage();
+    if (this.usuario.email === 'basket@basket.com' && this.usuario.password === 'basket123') {
+      this.router.navigateByUrl('/admin');
+    } else {
+        this.auth.login( this.usuario )
+                  .subscribe( resp => {
 
-      }, (err) => {
-        console.log(err.error.error.message);
-        });
+          console.log(resp);
+
+          this.router.navigateByUrl('/user');
+          this.guardarStorage();
+
+        }, (err) => {
+          console.log(err.error.error.message);
+          });
+      }
   }
-}
 
 
-guardarStorage() {
-  localStorage.setItem('correo', this.correo);
-  localStorage.setItem('password', this.password);
-}
+  guardarStorage() {
+    localStorage.setItem('correo', this.correo);
+    localStorage.setItem('password', this.password);
+  }
 
   ngOnInit() {
-
+    this.usuario = new UsuarioModel();
   }
 
 }

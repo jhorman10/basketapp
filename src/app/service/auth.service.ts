@@ -15,11 +15,10 @@ export class AuthService {
   // login
   // https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=[API_KEY]
 
-
-
   private URL = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty';
   private APIkey = 'AIzaSyBdrK2N_o_0Hx2-ulVOM79ZBgiGQHdbtNE';
   userToken: string;
+
   constructor(private http: HttpClient) {
     this.leerToken();
   }

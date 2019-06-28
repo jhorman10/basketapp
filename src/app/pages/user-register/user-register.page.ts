@@ -24,6 +24,7 @@ export class UserRegisterPage implements OnInit {
   }
 
   userRegister( form: NgForm) {
+
     if (form.invalid) { return; }
 
     this.auth.logup( this.usuario )
