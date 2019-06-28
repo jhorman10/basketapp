@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UsuarioModel } from '../models/usuario.model';
 import { map } from 'rxjs/operators';
-
+import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -100,6 +100,15 @@ export class AuthService {
     } else {
       return false;
     }
+  }
+
+  recuperarContra( usuario: UsuarioModel ): Promise<void> {
+    const mail = usuario.email;
+    return firebase.auth().sendPasswordResetEmail(mail).then(function() {
+      console.log('Mail de recuperación enviado a ', mail);
+    }).catch(function(err) {
+      console.log('Ha ocurrido un error', err);
+    });
   }
 
 }
