@@ -11,4 +11,5 @@ export class TeamModel {
     puntosFavor?: string;
     pruntoPromPartido?: string;
     ID?: string;
+    cantidadJugadores?: string;
 }

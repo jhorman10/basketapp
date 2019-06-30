@@ -89,6 +89,12 @@
         </ion-input>
       </ion-item>
       <ion-item>
+          <ion-label style="font-family: 'Raleway-Light'" position="floating">Cantidad grupos</ion-label>
+          <ion-input type="number" name="grupos" [(ngModel)]="torneo.CantidadGrupos" minlength="1" required #grupos
+            style="font-family: 'Raleway-Light'">
+          </ion-input>
+        </ion-item>
+      <ion-item>
         <ion-label style="font-family: 'Raleway-Light'" position="floating">Ciudad</ion-label>
         <ion-input type="text" name="ciudad" [(ngModel)]="torneo.ciudad" minlength="2" #ciudad required
           style="font-family: 'Raleway-Light'">

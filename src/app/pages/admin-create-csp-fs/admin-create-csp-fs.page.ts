@@ -1,3 +1,6 @@
+import { CrudTorneosService } from './../../service/crud-torneos.service';
+import { Router } from '@angular/router';
+import { TorneoModel } from './../../models/torneo.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminCreateCspFsPage implements OnInit {
 
-  constructor() { }
+  Torneo: TorneoModel[] = [];
+
+  constructor(private CRUD: CrudTorneosService,
+              private router: Router) { }
 
   ngOnInit() {
+ 
   }
 
   guardarTorneo() {

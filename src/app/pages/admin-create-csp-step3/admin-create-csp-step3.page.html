@@ -1,16 +1,16 @@
 <ion-header no-border>
   <ion-toolbar color="basketOrange">
-      <ion-buttons slot="start">
-          <ion-back-button color="light" defaultHref="/"></ion-back-button>
-      </ion-buttons>
-      <ion-title class="tituloAdmin" text-capitalize>AGREGAR EQUIPOS</ion-title>
-      <ion-buttons slot="end">
-          <ion-button color="transparent">punto</ion-button>
-      </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button color="light" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="tituloAdmin" text-capitalize style="margin-left: -15%">DESCRIPCIÓN EQUIPOS</ion-title>
+    <!-- <ion-buttons slot="end">
+      <ion-button color="transparent">punto</ion-button>
+    </ion-buttons> -->
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<!-- <ion-content>
 
   <p>CONFIGURACIÓN DE EQUIPOS</p>
 
@@ -38,4 +38,62 @@
 
   </form>
       
+</ion-content> -->
+
+<ion-content text-center>
+  <form (ngSubmit)="crearTeam(Teamf); Teamf.reset()" #Teamf="ngForm">
+    <ion-item>
+      <ion-label style="font-family: 'Raleway-Light'" position="floating">Nombre del Equipo</ion-label>
+      <ion-input type="text" [(ngModel)]="Team.nombreTeam" name="nombreTeam" #NombreEquipo required
+        style="font-family: 'Raleway-Light'"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="font-family: 'Raleway-Light'" position="floating">Logo</ion-label>
+      <ion-input type="text" [(ngModel)]="Team.logo" name="logo" #Logo required
+        style="font-family: 'Raleway-Light'"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label style="font-family: 'Raleway-Light'" position="floating">Cantidad jugadores</ion-label>
+        <ion-input type="number" [(ngModel)]="Team.cantidadJugadores" name="cantidadJugadores" #CantidadJugadores
+        required  style="font-family: 'Raleway-Light'"></ion-input>
+      </ion-item>
+    <!-- <ion-item>
+      <ion-label style="font-family: 'Raleway-Light'" position="floating">Max2</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="font-family: 'Raleway-Light'" position="floating">Max3</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="font-family: 'Raleway-Light'" position="floating">Partidos Jugados</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="font-family: 'Raleway-Light'" position="floating">Partidos Ganados</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="font-family: 'Raleway-Light'" position="floating">Partidos Perdidos</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="font-family: 'Raleway-Light'" position="floating">Puntos a Favor </ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="font-family: 'Raleway-Light'" position="floating">Puntos en Contra </ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="font-family: 'Raleway-Light'" position="floating">Puntos promedio por partido </ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item> -->
+    <br><br>
+    <ion-button type="submit" color="basketOrange">
+      <ion-label style="font-family: 'Raleway-Light'" color="light">
+        Siguiente
+      </ion-label>
+    </ion-button>
+  </form>
 </ion-content>

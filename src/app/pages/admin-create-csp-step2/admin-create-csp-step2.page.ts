@@ -1,5 +1,5 @@
+import { CrudGruposService } from './../../service/crud-grupos.service';
 import { Router } from '@angular/router';
-import { CRUDserviceService } from './../../service/crudservice.service';
 import { NgForm } from '@angular/forms';
 import { GrupoModel } from './../../models/grupo.model';
 import { AlertController } from '@ionic/angular';
@@ -12,44 +12,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminCreateCSPStep2Page implements OnInit {
 
-  grupos: GrupoModel;
+  gruposT: GrupoModel;
 
   constructor(public alertCtrl: AlertController,
-              private CRUD: CRUDserviceService,
+              private CRUD: CrudGruposService,
               private router: Router) { }
 
   ngOnInit() {
-    this.grupos = new GrupoModel();
+    this.gruposT = new GrupoModel();
   }
-
-  // async presentAlert() {
-  //   const alert = await this.alertCtrl.create({
-  //     header: 'Número de grupos',
-  //     inputs: [
-  //       {
-  //         name: 'numero_grupos',
-  //         type: 'number'
-  //       }
-  //     ],
-  //     buttons: ['Cancelar', 'OK']
-  //   });
-
-  //   await alert.present();
-  // }
 
   crearGrupos(form: NgForm) {
     if (form.invalid) { return; }
 
-    if (this.grupos.ID) {
+    if (this.gruposT.ID) {
 
-    this.CRUD.actualizarGrupos(this.grupos)
+    this.CRUD.actualizarGrupos(this.gruposT)
     .subscribe(resp => {
       console.log(resp);
     });
 
     } else {
 
-      this.CRUD.crearGrupo(this.grupos)
+      this.CRUD.crearGrupo(this.gruposT)
       .subscribe(resp => {
         console.log(resp);
       });

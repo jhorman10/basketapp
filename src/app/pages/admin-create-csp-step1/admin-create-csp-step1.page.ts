@@ -1,4 +1,4 @@
-import { CRUDserviceService } from './../../service/crudservice.service';
+import { CrudTorneosService } from './../../service/crud-torneos.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TorneoModel } from './../../models/torneo.model';
@@ -16,7 +16,7 @@ export class AdminCreateCSPStep1Page implements OnInit {
   torneo: TorneoModel;
 
   constructor(public alertCtrl: AlertController,
-              private CRUD: CRUDserviceService,
+              private CRUD: CrudTorneosService,
               private router: Router) { }
 
 

@@ -1,5 +1,8 @@
+import { TeamModel } from './../../models/team.model';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, FormArray } from '@angular/forms';
+import {  NgForm } from '@angular/forms';
+import { CrudEquiposService } from 'src/app/service/crud-equipos.service';
 
 @Component({
   selector: 'app-admin-create-csp-step3',
@@ -8,25 +11,37 @@ import { FormControl, FormGroup, Validators, FormArray } from '@angular/forms';
 })
 export class AdminCreateCSPStep3Page implements OnInit {
 
-  frmAddTeam: FormGroup;
-  equipos: [];
+  Team: TeamModel;
 
+  constructor(private CRUD: CrudEquiposService,
+              private router: Router) {   }
 
-  constructor() {
-    this.frmAddTeam = new FormGroup({
-      'equipos': new FormArray([
-        new FormControl('Gladiadores', Validators.required)
-      ])
-    });
-   }
-
-   addTeam() {
-     (<FormArray>this.frmAddTeam.controls['equipos']).push(
-       new FormControl('', Validators.required)
-     );
-   }
 
   ngOnInit() {
+    this.Team = new TeamModel();
+  }
+
+  crearTeam(form: NgForm) {
+
+    if (form.invalid) { return; }
+
+    if (this.Team.ID) {
+
+    this.CRUD.actualizaEquiposr(this.Team)
+    .subscribe(resp => {
+      console.log(resp);
+    });
+
+    } else {
+
+      this.CRUD.crearEquipos(this.Team)
+      .subscribe(resp => {
+        console.log(resp);
+      });
+    }
+
+    this.router.navigateByUrl('/admin-create-csp-fs');
+
   }
 
 }

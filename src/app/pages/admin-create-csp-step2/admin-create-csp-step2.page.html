@@ -1,16 +1,16 @@
 <ion-header no-border>
   <ion-toolbar color="basketOrange">
-      <ion-buttons slot="start">
-          <ion-back-button color="light" defaultHref="/"></ion-back-button>
-      </ion-buttons>
-      <ion-title class="tituloAdmin" text-capitalize>GRUPOS</ion-title>
-      <ion-buttons slot="end">
-        <ion-button color="transparent">punto</ion-button>
-      </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button color="light" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="tituloAdmin" text-capitalize>GRUPOS</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="transparent">punto</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<!-- <ion-content>
   <p>CONFIGURACIÓN DE GRUPOS</p>
   <ion-grid>
     <ion-row class="flIngresarGrupos">
@@ -37,4 +37,20 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+</ion-content> -->
+
+<ion-content text-center>
+  <form (ngSubmit)="crearGrupos(grupos); grupos.reset()" #grupos="ngForm">
+    <ion-item>
+      <ion-label style="font-family: 'Raleway-Light'" position="floating">Cantidad Equipos</ion-label>
+      <ion-input type="number" name="PuntosW" [(ngModel)]="gruposT.cantidadEquipos" #PuntosW required
+        style="font-family: 'Raleway-Light'"></ion-input>
+    </ion-item>
+    <br><br>
+    <ion-button type="submit" color="basketOrange">
+      <ion-label style="font-family: 'Raleway-Light'" color="light">
+        Siguiente
+      </ion-label>
+    </ion-button>
+  </form>
 </ion-content>
