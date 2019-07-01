@@ -1,3 +1,4 @@
+import { TorneoNuevoModel } from './../models/torneoNuevo.comdel';
 import { HttpClient } from '@angular/common/http';
 import { GrupoModel } from './../models/grupo.model';
 import { Injectable } from '@angular/core';
@@ -8,9 +9,8 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CrudGruposService {
-
   private url = 'https://auth-login-basketapk.firebaseio.com';
-  private grupo = '/Torneo/nodo/Grupos';
+  private grupo = `/Torneos/Grupos`;
 
 
   constructor(private http: HttpClient) { }

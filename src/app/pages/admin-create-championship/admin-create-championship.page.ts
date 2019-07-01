@@ -19,10 +19,13 @@ export class AdminCreateChampionshipPage implements OnInit {
     this.TorneoNuevo = new TorneoNuevoModel();
   }
 
-  crearTorneoNuevo(TorneoNuevo: TorneoNuevoModel ) {
-
-    //this.router.navigateByUrl('/admin-create-csp-step1');
-
+  crearTorneoNuevo() {
+    this.CRUD.crearTorneoNuevo(this.TorneoNuevo)
+    .subscribe(resp => {
+      console.log(resp);
+      this.TorneoNuevo = resp;
+    });
+    this.router.navigateByUrl('/admin-create-csp-step1');
   }
 
 }

@@ -37,11 +37,11 @@ export class AdminCreateCSPStep3Page implements OnInit {
       this.CRUD.crearEquipos(this.Team)
       .subscribe(resp => {
         console.log(resp);
+        this.Team = resp;
       });
     }
 
     this.router.navigateByUrl('/admin-create-csp-fs');
-
   }
 
 }

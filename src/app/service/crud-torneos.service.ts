@@ -1,3 +1,5 @@
+import { CrudTorneoNuevoService } from './crud-torneo-nuevo.service';
+import { TorneoNuevoModel } from './../models/torneoNuevo.comdel';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TorneoModel } from '../models/torneo.model';
@@ -8,8 +10,16 @@ import { map } from 'rxjs/operators';
 })
 export class CrudTorneosService {
 
+  CRUD: CrudTorneoNuevoService;
+
+  TN: TorneoNuevoModel = new TorneoNuevoModel;
+  NTN: any = JSON.stringify(this.TN.ID);
+
+  ntn = this.CRUD.consultarTorneoNuevo();
+
   private url = 'https://auth-login-basketapk.firebaseio.com';
-  private torneo = '/Torneo/nodo/Torneo';
+  private torneo = `/Torneos/${this.NTN}/Torneo`;
+
 
   constructor(private http: HttpClient) { }
 

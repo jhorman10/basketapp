@@ -8,9 +8,9 @@ import { map } from 'rxjs/operators';
 })
 export class CrudTorneoNuevoService {
 
+
   private url = 'https://auth-login-basketapk.firebaseio.com';
-  private torneoNuevo = '/Torneo/nodo';
-  private torneo = '/Torneo/nodo/Torneo';
+  private torneoNuevo = '/Torneo';
 
   constructor(private http: HttpClient) { }
 
@@ -53,7 +53,7 @@ export class CrudTorneoNuevoService {
 
     delete torneoNuevoTem.ID;
 
-    return this.http.put(`${ this.url }${this.torneo}${ torneoNuevo.ID }.json`, torneoNuevoTem);
+    return this.http.put(`${ this.url }${this.torneoNuevo}${ torneoNuevo.ID }.json`, torneoNuevoTem);
   }
 
   consultarTorneoNuevo() {

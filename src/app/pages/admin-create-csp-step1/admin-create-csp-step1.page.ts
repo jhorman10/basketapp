@@ -19,6 +19,9 @@ export class AdminCreateCSPStep1Page implements OnInit {
               private CRUD: CrudTorneosService,
               private router: Router) { }
 
+ ngOnInit() {
+    this.torneo = new TorneoModel();
+  }
 
   crearTorneo(form: NgForm) {
     if (form.invalid) { return; }
@@ -26,13 +29,10 @@ export class AdminCreateCSPStep1Page implements OnInit {
     this.CRUD.crearTorneo(this.torneo)
             .subscribe(resp => {
               console.log(resp);
+              this.torneo = resp;
             });
 
     this.router.navigateByUrl('/admin-create-csp-step2');
-  }
-
-  ngOnInit() {
-    this.torneo = new TorneoModel();
   }
 
 }

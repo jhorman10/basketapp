@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 export class CrudUsuariosService {
 
   private url = 'https://auth-login-basketapk.firebaseio.com';
-  private usuario = '/Torneo/nodo/Usuario';
+  private usuario = '/Torneos/Usuario';
 
   constructor(private http: HttpClient) { }
 

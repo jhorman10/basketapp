@@ -37,6 +37,7 @@ export class AdminCreateCSPStep2Page implements OnInit {
       this.CRUD.crearGrupo(this.gruposT)
       .subscribe(resp => {
         console.log(resp);
+        this.gruposT = resp;
       });
     }
 
