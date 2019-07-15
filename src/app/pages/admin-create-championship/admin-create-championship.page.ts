@@ -1,4 +1,3 @@
-import { CrudTorneoNuevoService } from './../../service/crud-torneo-nuevo.service';
 import { Router } from '@angular/router';
 import { TorneoNuevoModel } from './../../models/torneoNuevo.comdel';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +11,7 @@ export class AdminCreateChampionshipPage implements OnInit {
 
   TorneoNuevo: TorneoNuevoModel;
 
-  constructor(private CRUD: CrudTorneoNuevoService,
+  constructor(
               private router: Router) { }
 
   ngOnInit() {
@@ -20,12 +19,7 @@ export class AdminCreateChampionshipPage implements OnInit {
   }
 
   crearTorneoNuevo() {
-    this.CRUD.crearTorneoNuevo(this.TorneoNuevo)
-    .subscribe(resp => {
-      console.log(resp);
-      this.TorneoNuevo = resp;
-    });
-    this.router.navigateByUrl('/admin-create-csp-step1');
+    
   }
 
 }

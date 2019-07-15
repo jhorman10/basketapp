@@ -26,14 +26,7 @@ export class UserForgotPwPage implements OnInit {
 
     if (form.invalid) {
       return;
-    } else {
-      this.auth.recuperarContra(this.usuario).then(function(){
-        const alert = this.alCtrl.create({
-          message: 'Hemos enviado un correo para la recuperación de la contraseña',
-          buttons: ['Confirmar']
-        });
-      });
-    }
+    } 
 
     this.router.navigateByUrl('/login');
   }
